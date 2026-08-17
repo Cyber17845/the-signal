@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Signal — All Editions | CyberSainya</title>
+<meta name="description" content="Every edition of The Signal, CyberSainya's weekly executive briefing across the eight layers of your architecture. Browse and read every issue.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CyberSainya">
+<meta property="og:title" content="The Signal — All Editions | CyberSainya">
+<meta property="og:description" content="Every edition of The Signal — CyberSainya's weekly executive briefing across the eight layers of your architecture. Browse and read every issue.">
+<meta property="og:url" content="https://signal.cybersainya.com/">
+<meta property="og:image" content="https://signal.cybersainya.com/issue-002-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Signal — All Editions | CyberSainya">
+<meta name="twitter:description" content="Every edition of The Signal — CyberSainya's weekly executive briefing across the eight layers of your architecture.">
+<meta name="twitter:image" content="https://signal.cybersainya.com/issue-002-cover.jpg">
+<style>
+  :root{
+    --ink:#241f33; --purple:#4a4661; --rust:#a24e1f; --paper:#faf8f3;
+    --line:#e0dacd; --soft:#6b6577; --navy:#0B2545;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#eceae3;color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif;line-height:1.55;}
+  a{color:var(--rust);}
+  .wrap{max-width:1000px;margin:0 auto;background:#fff;min-height:100vh;
+    box-shadow:0 1px 50px rgba(0,0,0,.07);}
+  /* knight header bar */
+  .top{background:var(--purple);color:#fff;display:flex;align-items:center;
+    justify-content:space-between;padding:14px 30px;flex-wrap:wrap;gap:8px;}
+  .top a.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+  .knight{width:34px;height:34px;border-radius:6px;background:#5b5675;display:flex;
+    align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:1px;
+    font-family:Arial,sans-serif;}
+  .brand b{font-family:Georgia,serif;font-size:19px;letter-spacing:3px;font-weight:700;}
+  .top .tag{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;
+    text-transform:uppercase;opacity:.85;}
+  /* masthead */
+  .mast{padding:40px 40px 8px;}
+  .mast h1{font-size:60px;line-height:.95;margin:0;letter-spacing:-.5px;}
+  .mast .lede{font-size:16px;color:#4a453e;font-style:italic;margin:12px 0 0;max-width:640px;}
+  .mast .rule{border:0;border-top:4px solid var(--ink);margin:20px 0 0;}
+  .count{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:2px;text-transform:uppercase;color:var(--soft);padding:22px 40px 4px;}
+  /* editions list */
+  .editions{padding:6px 40px 44px;}
+  .ed{display:flex;gap:26px;padding:26px 0;border-top:1px solid var(--line);}
+  .ed:first-child{border-top:none;}
+  .ed .cover{flex:0 0 230px;}
+  .ed .cover img{width:230px;height:180px;object-fit:cover;border:1px solid var(--line);
+    border-radius:6px;display:block;box-shadow:0 3px 12px rgba(0,0,0,.10);}
+  .ed .body{flex:1;min-width:0;}
+  .eyebrow{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:2px;text-transform:uppercase;color:var(--rust);}
+  .eyebrow .dot{color:var(--soft);margin:0 8px;}
+  .eyebrow .date{color:var(--soft);}
+  .ed h2{font-size:25px;line-height:1.15;margin:7px 0 6px;}
+  .ed h2 a{color:var(--ink);text-decoration:none;}
+  .ed h2 a:hover{color:var(--rust);}
+  .ed p{font-size:15px;color:#413c46;margin:0 0 14px;}
+  .btn{display:inline-block;background:var(--rust);color:#fff;text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;
+    padding:10px 20px;border-radius:4px;}
+  .btn:hover{background:#8f4319;}
+  /* footer */
+  .foot{background:var(--purple);color:#fff;padding:22px 40px;font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;letter-spacing:.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .foot a{color:#fff;text-decoration:none;opacity:.9;}
+  @media (max-width:680px){
+    .mast{padding:26px 20px 6px;}
+    .mast h1{font-size:40px;}
+    .count{padding:18px 20px 2px;}
+    .editions{padding:4px 20px 34px;}
+    .ed{flex-direction:column;gap:14px;}
+    .ed .cover,.ed .cover img{flex:none;width:100%;height:auto;}
+    .ed .cover img{height:210px;}
+    .top{padding:12px 18px;}
+    .foot{padding:18px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="brand" href="https://www.cybersainya.com">
+      <span class="knight">CS</span>
+      <b>CYBERSAINYA</b>
+    </a>
+    <span class="tag">The Signal &middot; All Editions</span>
+  </div>
+
+  <div class="mast">
+    <h1>The Signal</h1>
+    <p class="lede">Eight layers of your architecture, one briefing. Every edition moves a number on your risk register, changes what you owe under compliance, or changes what your stack costs to run. Published weekly.</p>
+    <hr class="rule">
+  </div>
+
+  <div class="count">The Archive &middot; every edition</div>
+
+  <div class="editions">
+
+    <!-- ===== ISSUE 002 ===== -->
+    <div class="ed">
+      <div class="cover">
+        <a href="https://signal.cybersainya.com/issue-002.html">
+          <img src="https://signal.cybersainya.com/issue-002-cover.jpg" alt="The Signal — Issue 002 cover">
+        </a>
+      </div>
+      <div class="body">
+        <div class="eyebrow">Issue 002 <span class="dot">&middot;</span> <span class="date">Monday, August 17, 2026</span></div>
+        <h2><a href="https://signal.cybersainya.com/issue-002.html">The hard part of AI stopped being the model. It’s the control plane now — and that’s a P&amp;L question.</a></h2>
+        <p>The hard part of AI is now the control plane (Gartner: 40%+ of agentic projects scrapped by 2027), the inference bill hits 18% of cloud spend, SASE retires the VPN, machine identities reach 80:1, and defense goes agentic — every claim sourced.</p>
+        <a class="btn" href="https://signal.cybersainya.com/issue-002.html">Read this edition →</a>
+      </div>
+    </div>
+
+    <!-- ===== ISSUE 001 ===== -->
+    <div class="ed">
+      <div class="cover">
+        <a href="https://signal.cybersainya.com/issue-001.html">
+          <img src="https://static.wixstatic.com/media/64547b_1402fdcc747749419bec9f373e0a4734~mv2.png" alt="The Signal — Issue 001 cover">
+        </a>
+      </div>
+      <div class="body">
+        <div class="eyebrow">Issue 001 <span class="dot">&middot;</span> <span class="date">Wednesday, August 12, 2026</span></div>
+        <h2><a href="https://signal.cybersainya.com/issue-001.html">Shadow AI becomes an asset class you are now expected to inventory.</a></h2>
+        <p>AI agents as the new attack surface (88% of orgs hit), cloud misconfiguration as the #1 breach vector, passkeys past five billion, and an RMM bypass fuelling fresh ransomware — every claim sourced.</p>
+        <a class="btn" href="https://signal.cybersainya.com/issue-001.html">Read this edition →</a>
+      </div>
+    </div>
+
+    <!-- ===== To add a new issue: copy one .ed block above, put it at the TOP (newest first),
+             and update the cover image, issue number, date, headline, summary and the 3 links. ===== -->
+
+  </div>
+
+  <div class="foot">
+    <span>&copy; CyberSainya &middot; The Signal</span>
+    <a href="https://www.cybersainya.com">cybersainya.com</a>
+  </div>
+
+</div>
+</body>
+</html>
