@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Signal — Issue 008 | CyberSainya</title>
+<meta name="description" content="More than half the traffic on Fastly's network is now machine-generated, and AI traffic is growing 6.5x faster than human. Eight layers on treating machines as a first-class audience, plus $351.6M lost at Bitget without a key touched and EvilTokens beating MFA across 12,000 inboxes — every claim sourced.">
+<link rel="canonical" href="https://signal.cybersainya.com/issue-008.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CyberSainya">
+<meta property="og:title" content="The Signal — Issue 008 | CyberSainya">
+<meta property="og:description" content="More than half the traffic on Fastly's network is now machine-generated, and AI traffic is growing 6.5x faster than human. Eight layers on treating machines as a first-class audience, plus $351.6M lost at Bitget without a key touched and EvilTokens beating MFA across 12,000 inboxes — every claim sourced.">
+<meta property="og:url" content="https://signal.cybersainya.com/issue-008.html">
+<meta property="og:image" content="https://signal.cybersainya.com/issue-008-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Signal — Issue 008 | Half of your website's visitors aren't people anymore">
+<meta name="twitter:description" content="More than half the traffic on Fastly's network is now machine-generated, and AI traffic is growing 6.5x faster than human. Eight layers on treating machines as a first-class audience, plus $351.6M lost at Bitget without a key touched and EvilTokens beating MFA across 12,000 inboxes — every claim sourced.">
+<meta name="twitter:image" content="https://signal.cybersainya.com/issue-008-cover.jpg">
+<style>
+  :root{--ink:#1a1815;--rust:#a24e1f;--rust2:#b0561f;--gray:#6f6a63;--line:#1a1815;--box:#f1efe8;--navy:#0B2545;--paper:#ffffff;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#e9e7e2;font-family:Georgia,'Times New Roman',serif;color:var(--ink);}
+  .page{max-width:1040px;margin:24px auto;background:var(--paper);padding:44px 54px 40px;box-shadow:0 2px 14px rgba(0,0,0,.18);}
+  .mast{display:flex;justify-content:space-between;align-items:center;}
+  .mastL{display:flex;align-items:center;gap:16px;}
+  .mastL img{height:70px;display:block;}
+  .mastwordmark{font-family:Georgia,serif;font-weight:700;font-size:26px;letter-spacing:2px;color:var(--ink);}
+  .divv{width:1px;height:44px;background:#cfc9bf;}
+  .eyebrow{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;letter-spacing:4px;color:var(--gray);}
+  .mastR{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#3a3630;text-align:right;}
+  .mastR b{color:var(--ink);}
+  .rule-thin{border:0;border-top:1px solid #c9c3b8;margin:14px 0 6px;}
+  .rule-thick{border:0;border-top:4px solid var(--line);margin:10px 0 0;}
+  .titlerow{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;}
+  .paptitle{font-size:66px;line-height:.95;font-weight:700;letter-spacing:-.5px;margin:0;}
+  .trades{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#3a3630;text-align:right;max-width:430px;line-height:1.5;}
+  .mission{font-size:14.5px;color:#4a453e;font-style:italic;margin:8px 0 0;}
+  .intable{width:100%;border-collapse:collapse;margin-top:14px;background:#faf9f6;border:1px solid #d8d2c6;}
+  .intable td{border:1px solid #ddd7cb;vertical-align:top;padding:11px 12px;}
+  .inlabel{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--gray);width:64px;background:#f2efe8;border-left:4px solid var(--rust)!important;}
+  .tz4{width:19%;}
+  .tzk{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:1px;color:var(--gray);margin-bottom:4px;}
+  .tzt{font-size:12.5px;font-weight:700;line-height:1.3;color:var(--ink);}
+  .online{width:96px;text-align:center;background:#faf9f6;}
+  .onlinebadge{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:800;font-size:19px;line-height:50px;margin:0 auto 7px;letter-spacing:1px;}
+  .onlinet{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4a453e;line-height:1.4;}
+  .onlinet b{font-size:11.5px;color:var(--ink);}
+  .lead-eyebrow{display:inline-block;background:var(--rust);color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 12px;margin:26px 0 4px;}
+  .leadhead{font-size:40px;line-height:1.08;font-weight:700;margin:8px 0 14px;letter-spacing:-.4px;}
+  .thenumband{background:var(--navy);color:#eef3f8;padding:16px 22px;border-radius:2px;display:flex;align-items:center;gap:24px;margin:6px 0 18px;}
+  .thenumband .bignum{font-family:Georgia,serif;font-size:50px;font-weight:700;color:#fff;line-height:1;white-space:nowrap;}
+  .thenumband .tbwrap{flex:1;min-width:0;}
+  .thenumband .tblabel{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:2px;color:#9db6d6;margin-bottom:3px;}
+  .thenumband .tbtext{font-size:13px;line-height:1.5;}
+  .thenumband .tbtext b{color:#fff;}
+  .thenumband .tbsrc{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8fa9ca;margin-top:6px;letter-spacing:1px;}
+  .leadprose{font-size:14px;line-height:1.62;text-align:justify;}
+  .leadprose p{margin:0 0 11px;} .leadprose p:first-child{margin-top:0;}
+  .leadbody{overflow:hidden;}
+  .leadhero{float:right;width:40%;height:auto;margin:0 0 14px 22px;border:1px solid #ece7dd;border-radius:3px;background:#f4f1e8;}
+  .dropfollow b{font-variant:small-caps;letter-spacing:.5px;}
+  .secrule{border-top:3px solid var(--line);margin:30px 0 0;}
+  .sechead{width:100%;border-collapse:collapse;margin-top:8px;}
+  .secname{font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:800;letter-spacing:1px;color:var(--ink);}
+  .seccount{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gray);text-align:right;}
+  .kicker{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--rust);margin:16px 0 6px;}
+  .ihead{font-size:25px;line-height:1.14;font-weight:700;margin:0 0 8px;letter-spacing:-.3px;}
+  .hair{border-top:1px solid #d8d2c6;margin:0 0 14px;}
+  .prose2{column-count:2;column-gap:30px;font-size:14px;line-height:1.62;text-align:justify;}
+  .prose2 p{margin:0 0 11px;} .prose2 p:first-child{margin-top:0;}
+  .numbox{background:var(--box);border-left:5px solid var(--rust);padding:12px 15px;}
+  .vendbox{background:#f7fafe;border:1px solid #cddaea;border-left:5px solid var(--navy);padding:12px 15px;}
+  .boxlabel{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:var(--rust);margin-bottom:6px;}
+  .boxlabel.vend{color:var(--navy);}
+  .boxbody{font-size:12.5px;line-height:1.55;color:#2a2721;}
+  .sources{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--rust2);line-height:1.7;margin:12px 0 2px;}
+  .sources a{color:var(--rust2);text-decoration:underline;text-underline-offset:2px;}
+  .sources a:hover{color:var(--rust);}
+  .capstone{background:var(--navy);color:#eef3f8;padding:18px 22px;font-size:14.5px;line-height:1.62;margin-top:12px;border-radius:2px;}
+  .capstone b{color:#ffffff;}
+  .promo{background:var(--navy);color:#eef3f8;padding:20px 24px;border-radius:2px;border-left:6px solid var(--rust);margin-top:22px;}
+  .promohead{font-family:Georgia,serif;font-size:20px;line-height:1.26;font-weight:700;color:#fff;margin-bottom:10px;}
+  .promobody{font-size:14px;line-height:1.6;color:#eef3f8;}
+  .promobody b{color:#fff;}
+  .promocta{display:inline-block;margin-top:12px;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:13.5px;color:#fff;text-decoration:underline;text-underline-offset:3px;}
+  .promosrc{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#8fa9ca;margin-top:12px;}
+  .promosrc a{color:#9db6d6;text-decoration:underline;}
+  .furniture{margin-top:14px;}
+  .furniture.noimg{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;}
+  .furniture.noimg .numbox,.furniture.noimg .vendbox{margin:0;}
+  .furniture.withimg{display:grid;grid-template-columns:0.95fr 1.05fr;gap:16px;align-items:stretch;min-height:236px;}
+  .fimg{display:flex;min-width:0;}
+  .furnimg{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border:1px solid #ece7dd;border-radius:3px;background:#f4f1e8;}
+  .fboxes{display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .fboxes .numbox,.fboxes .vendbox{margin:0;flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-start;}
+  .layer .teaser.railfit{max-width:100%;margin:14px 0 0;}
+  .funbar{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 0;}
+  .pwotw{background:#f7f3ea;border-left:5px solid var(--rust);padding:8px 15px;margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#3a3630;}
+  .pwotw b{color:var(--rust);letter-spacing:1.5px;font-size:11px;}
+  .pwotw code{font-family:'Courier New',monospace;background:#fff;border:1px solid #e2dccf;padding:1px 7px;border-radius:3px;color:var(--navy);font-weight:700;}
+  .pwotw i{color:#6f6a63;}
+  .teaser{background:#f2f6fb;border:1px solid #cddaea;border-left:5px solid var(--navy);padding:12px 15px;margin:16px 0;}
+  .teaser.wide{max-width:100%;}
+  .teaser .tlabel{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:var(--navy);margin-bottom:5px;}
+  .teaser .tbody{font-size:13px;line-height:1.5;color:#2a2721;}
+  .teaser .tbody i{color:#8a857c;font-size:11.5px;}
+  .teaseranswer{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#8a857c;font-style:italic;text-align:center;margin:20px 0 0;}
+  .aboutlede{font-size:15px;line-height:1.62;margin:14px 0 16px;text-align:justify;}
+  .aboutcols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:16px;}
+  .abouth{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px;}
+  .aboutt{font-size:13.5px;line-height:1.55;color:#3a3630;}
+  .aboutt a{color:var(--rust);font-weight:700;text-decoration:none;}
+  .vendorneutral{background:var(--box);border-left:5px solid var(--rust);padding:15px 18px;font-size:13.5px;line-height:1.6;color:#2a2721;}
+  .vendorneutral b{color:var(--ink);}
+  .footer{margin-top:34px;border-top:4px solid var(--line);padding-top:16px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#4a453e;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .footer b{color:var(--ink);}
+  .footer a{color:var(--navy);font-weight:700;text-decoration:none;}
+  @media (max-width:760px){
+    .page{padding:26px 20px 30px;} .paptitle{font-size:44px;} .titlerow{flex-direction:column;align-items:flex-start;gap:6px;}
+    .trades{text-align:left;} .leadhead{font-size:28px;} .leadprose{column-count:1;}
+    .intable,.intable tbody,.intable tr,.intable td{display:block;width:100%!important;}
+    .aboutcols{grid-template-columns:1fr;gap:16px;} .footer{flex-direction:column;align-items:flex-start;gap:8px;}
+    .funbar{grid-template-columns:1fr;} .teaser{max-width:100%;}
+    .prose2{column-count:1;}
+    .furniture.noimg,.furniture.withimg{grid-template-columns:1fr;min-height:0;}
+    .furnimg{height:auto;max-height:320px;}
+    .leadhero{float:none;width:100%;margin:10px 0;}
+    .thenumband{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+  @media print{ body{background:#fff;} .page{box-shadow:none;margin:0;max-width:none;padding:26px 30px;}
+    .layer,.numbox,.vendbox,.thenumband,.capstone{break-inside:avoid;} }
+</style></head>
+<body>
+<div style="background:#4a4661;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;text-align:center;"><a href="https://signal.cybersainya.com/" style="color:#fff;text-decoration:none;">The Signal &middot; All editions &rarr;</a></div>
+<div class="page">
+  <div class="mast">
+    <div class="mastL">
+      <img src="issue-008-logo.png" alt="CyberSainya">
+      <div class="mastwordmark">CYBERSAINYA</div>
+      <div class="divv"></div>
+      <div class="eyebrow">EXECUTIVE BRIEFING</div>
+    </div>
+    <div class="mastR"><b>Issue 008</b> &nbsp; Tuesday, September 29, 2026 &nbsp;·&nbsp; Weekly</div>
+  </div>
+  <hr class="rule-thin">
+  <div class="titlerow">
+    <h1 class="paptitle">The Signal</h1>
+    <div class="trades">AI &amp; Intelligence · Data · Applications · Cloud · Infrastructure · Network · Identity · Cybersecurity</div>
+  </div>
+  <div class="mission">Eight layers of your architecture, one briefing. Every item moves a number on your risk register, changes what you owe under compliance, or changes what your stack costs to run.</div>
+  <hr class="rule-thick">
+
+  <div class="funbar">
+  <div class="pwotw"><b>BUZZWORD OF THE WEEK</b> &nbsp;<code>Agentic traffic</code> <i>&mdash; the half of your visitors that will never see your homepage, click your ad, or read the tagline you spent a quarter perfecting.</i></div>
+  <div class="pwotw"><b>PASSWORD OF THE WEEK</b> &nbsp;<code>are-you-a-robot</code> <i>&mdash; increasingly, yes &mdash; and it is here to buy.</i></div>
+</div>
+
+  <table class="intable">
+<tr>
+  <td class="inlabel" rowspan="2">IN THIS<br>ISSUE</td>
+  <td class="tz4"><div class="tzk">AI &amp; INTELLIGENCE</div><div class="tzt">US &amp; China open an AI-incident &lsquo;super intelligence&rsquo; channel</div></td><td class="tz4"><div class="tzk">DATA</div><div class="tzt">Bitget loses $351.6M &mdash; the data lied, not the keys</div></td><td class="tz4"><div class="tzk">APPLICATIONS</div><div class="tzt">SharePoint &lsquo;spoofing&rsquo; bug is really remote code execution</div></td><td class="tz4"><div class="tzk">CLOUD</div><div class="tzt">F5 BIG-IP: the device that authorizes access got an RCE</div></td>
+  <td class="online" rowspan="2">
+     <a href="https://cybersainya.com/contactus" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+       <div class="onlinebadge">CS</div>
+       <div class="onlinet"><b>Get it in your inbox</b><br>Subscribe free &mdash;<br>a new edition weekly</div>
+     </a>
+  </td>
+</tr>
+<tr><td class="tz4"><div class="tzk">INFRASTRUCTURE</div><div class="tzt">Accenture&rsquo;s $4.1B bet consolidates OT security</div></td><td class="tz4"><div class="tzk">NETWORK</div><div class="tzt">Citrix NetScaler zero-days exploited worldwide</div></td><td class="tz4"><div class="tzk">IDENTITY &amp; ACCESS</div><div class="tzt">EvilTokens beat MFA without a single password</div></td><td class="tz4"><div class="tzk">CYBERSECURITY</div><div class="tzt">North Korea&rsquo;s fake-job crews drain 7,000 wallets</div></td></tr>
+</table>
+
+  <div class="lead-eyebrow">FRONT PAGE · THE CEO&rsquo;S STRATEGY DESK</div>
+  <h2 class="leadhead">Half of your website&rsquo;s visitors aren&rsquo;t people anymore.</h2>
+  <div class="thenumband">
+  <div class="bignum">50%</div>
+  <div class="tbwrap">
+    <div class="tblabel">THE MAJORITY</div>
+    <div class="tbtext">Share of traffic on Fastly&rsquo;s network that is now <b>machine-generated</b> &mdash; bots, crawlers and AI agents &mdash; having crossed half in mid-2026, with AI traffic growing <b>6.5x faster</b> than human. Your digital front door was built for people; its main audience is now software.</div>
+    <div class="tbsrc">Fastly network data &middot; Sept 2026</div>
+  </div>
+</div>
+  <div class="leadbody">
+     <img class="leadhero" src="issue-008-lead.jpg" alt="A businessman at a website-storefront counter serving a queue that is half robots and half humans, with a split human-vs-machine chart behind him">
+     <div class="leadprose">
+<p><span class="dropfollow"><b>For thirty years</b></span>, digital strategy assumed a human on the other end of the screen. That assumption just broke. Fastly, one of the largest content-delivery networks, reports that machine-generated traffic &mdash; bots, crawlers and increasingly autonomous AI agents &mdash; crossed <b>half of all traffic</b> on its network in July and August 2026, and that AI traffic grew about <b>6.5 times faster</b> than human traffic earlier in the year. The audience for your website, your APIs and your storefront is now, more often than not, software acting on someone&rsquo;s behalf.</p>
+<p>This reframes several budgets at once. <b>Infrastructure:</b> you are paying to serve a machine audience that does not buy the way humans do, so cost-per-visit and bot management move from an IT footnote to a P&amp;L line. <b>Analytics and marketing:</b> if half your traffic is machines, your conversion rates, attribution and A/B tests are measuring a crowd that is partly synthetic. <b>Product and commerce:</b> when an agent, not a person, compares and buys, the winners are the businesses whose prices, inventory and content are cleanly available through APIs the agent can read &mdash; and the losers are the ones optimized only for a human eye.</p>
+<p><b>Our read.</b> Treat machines as a first-class audience. Decide deliberately which bots and agents you welcome, meter or block; separate human and machine traffic in every metric so you steer by real numbers; and make your core offer &mdash; catalog, pricing, availability, key content &mdash; accessible through a governed API, because that is the channel the fastest-growing segment of your visitors actually uses. The web is being rebuilt for machine readers. Design for them on purpose, or be read badly by accident.</p>
+</div>
+     <div class="sources"><a class="src" href="https://www.nasdaq.com/press-release/fastly-launches-ai-firewall-ai-runtime-control-secure-and-scale-ai-2026-09-21" target="_blank" rel="noopener">Fastly launches AI Firewall and AI Runtime Control &mdash; Nasdaq</a> &nbsp;·&nbsp; <a class="src" href="https://www.channelinsider.com/ai/fastly-ai-runtime-controls-enterprise-agents/" target="_blank" rel="noopener">Fastly ships AI runtime control as machine traffic tops 50% &mdash; Channel Insider</a></div>
+  </div>
+  <div class="teaser wide"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Machines are already half of visits and machine traffic grows 6.5x faster than human. Will people be the majority of your traffic next year? <i>(answer at the foot)</i></div></div>
+
+  <section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">1 &nbsp; AI &amp; INTELLIGENCE</td><td class="seccount">POLICY · GOVERNANCE</td></tr></table>
+  <div class="kicker">WASHINGTON AND BEIJING OPEN AN AI CRISIS LINE</div>
+  <h3 class="ihead">The US and China agreed to a direct channel for AI incidents &mdash; a signal that even rivals now treat advanced AI as a systemic risk.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>On September 25, meeting in Washington, the United States and China agreed to establish an <b>AI Incident Communication Channel</b> and a recurring <b>US&ndash;China Super Intelligence Dialogue</b>, with the first session expected by November. The channel is a diplomatic hotline for direct communication when an advanced AI system behaves unexpectedly or an automated signal is misread &mdash; an attempt to reduce the risk of miscalculation between the two powers most shaping the technology. Both sides even adopted shared language, referring to frontier AI as &ldquo;super intelligence.&rdquo;</p>
+<p><b>Our read.</b> Governments building incident hotlines for AI is a preview of what your own organization needs internally. If a model or agent in your stack does something unexpected, who gets the call, how fast, and what is the playbook? Stand up an AI-incident process now &mdash; owners, escalation, kill-switches and logging &mdash; and require the same of your AI vendors. The diplomacy is a headline; the operational lesson is that &ldquo;what do we do when the AI misbehaves&rdquo; needs an answer before, not during, the incident.</p></div>
+  <div class="sources"><a class="src" href="https://www.washingtonpost.com/business/2026/09/26/china-us-agreement-xi-trump-visit/c5c743a4-b997-11f1-94cb-d3d8f22a8c8b_story.html" target="_blank" rel="noopener">China and the US agree to set up a new AI safety channel &mdash; The Washington Post</a> &nbsp;·&nbsp; <a class="src" href="https://www.axios.com/2026/09/26/us-china-ai-si-deal" target="_blank" rel="noopener">US and China agree to &lsquo;super intelligence&rsquo; dialogue &mdash; Axios</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>Sept 25:</b> US and China agreed to an <b>AI Incident Communication Channel</b> plus a <b>US&ndash;China Super Intelligence Dialogue</b>, first meeting <b>by November</b>. Purpose: direct contact during unexpected AI behavior or misread automated signals, to cut the risk of miscalculation.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Anthropic, Microsoft, Google Cloud</b> and <b>AWS</b> already run model-incident and safety-reporting programs. Judge an AI partner on whether it will tell you &mdash; quickly &mdash; when a model misbehaves, and whether its controls plug into your own incident-response process.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Two superpowers agree to a crisis line for AI incidents, with the first talks &ldquo;by November.&rdquo; From late September, how many months&rsquo; gap at most? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">2 &nbsp; DATA</td><td class="seccount">INTEGRITY · CUSTODY</td></tr></table>
+  <div class="kicker">THE KEYS WERE SAFE. THE DATA LIED.</div>
+  <h3 class="ihead">Bitget lost $351.6M not because keys were stolen, but because attackers falsified the data its approval system trusted.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Attackers moved an estimated <b>$351.6 million</b> out of crypto exchange Bitget&rsquo;s hot and warm wallets across seven blockchains &mdash; the largest crypto theft of 2026 so far. The striking detail is the method: Bitget says its private keys were <b>never stolen</b>. Instead, attackers compromised a backend system and manipulated the transaction data shown to the authorization process, so the approvals looked legitimate and the transfers sailed through. The exchange, which ties the pattern to North Korean activity, paused withdrawals and covered the loss from its protection fund.</p>
+<p><b>Our read.</b> This is a data-integrity failure, not a key-theft failure &mdash; and it is the more insidious kind. Every automated approval, payment run and reconciliation trusts the data in front of it; if an attacker can quietly edit that data, your controls approve the fraud for them. Protect the integrity and provenance of the records your critical workflows act on: sign and verify transaction data, separate the systems that propose from the systems that approve, and alert on out-of-band changes. Confidentiality gets the headlines; integrity is what moves the money.</p></div>
+  <div class="sources"><a class="src" href="https://thehackernews.com/2026/09/bitget-says-suspected-north-korean.html" target="_blank" rel="noopener">Bitget says suspected North Korean hackers stole $351.6M after backend compromise &mdash; The Hacker News</a> &nbsp;·&nbsp; <a class="src" href="https://www.securityweek.com/north-korea-suspected-in-351-million-bitget-crypto-heist/" target="_blank" rel="noopener">North Korea suspected in $351 million Bitget crypto heist &mdash; SecurityWeek</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-008-data.jpg" alt="An open vault with its keys still safely on a hook while a printed ledger of falsified figures feeds out and a stamp approves it"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody">Bitget lost ~<b>$351.6M</b> across Ethereum, XRP Ledger, Arbitrum, Avalanche, Optimism, BNB Chain and Base &mdash; the <b>largest crypto theft of 2026</b>. Private keys were <b>not stolen</b>; attackers compromised a <b>backend</b> and falsified the data the approval process saw. Suspected North Korean activity.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>CrowdStrike, Microsoft, Tenable</b> and <b>IBM</b> help protect the integrity and provenance of critical data flows &mdash; separating propose-from-approve, signing records, and alerting on tampering. The control that matters here is trustworthy data, not just a locked vault.</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">The private keys were never stolen &mdash; attackers changed what the approver saw. If the keys are safe but the data lies, is the vault secure? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">3 &nbsp; APPLICATIONS</td><td class="seccount">PATCH NOW · RE-RATED</td></tr></table>
+  <div class="kicker">A &lsquo;SPOOFING&rsquo; BUG THAT WAS REALLY REMOTE CODE EXECUTION</div>
+  <h3 class="ihead">Microsoft quietly upgraded a SharePoint flaw from medium spoofing to high-severity RCE &mdash; and attackers moved in.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Microsoft initially rated <b>CVE-2026-65660</b> in SharePoint Server a medium-severity &ldquo;spoofing&rdquo; issue, then revised it to a high-severity <b>remote code execution</b> flaw that lets a low-privileged, authenticated attacker run code without user interaction. Roughly six weeks after the patch and days after researchers published technical details, exploitation began &mdash; including fileless, in-memory webshells, with attackers chaining the authenticated bug to a separate anonymous delivery flaw. CISA added it to the Known Exploited Vulnerabilities catalog on September 25 with a federal deadline of September 28. SharePoint sits on sensitive documents and identities, which makes it a prized foothold.</p>
+<p><b>Our read.</b> Do not triage by the vendor&rsquo;s first label. Severity ratings get revised, and &ldquo;spoofing&rdquo; became &ldquo;code execution&rdquo; on the same CVE &mdash; so drive your patch priorities from exposure and exploitation signals, not just the initial score. Patch SharePoint on the CISA clock, hunt for in-memory webshells that survive a simple reboot check, and treat any internet-reachable collaboration server as a high-value target that attackers actively watch for public exploit details.</p></div>
+  <div class="sources"><a class="src" href="https://www.securityweek.com/microsoft-sharepoint-flaw-cve-2026-65660-now-exploited-in-attacks/" target="_blank" rel="noopener">Microsoft SharePoint flaw CVE-2026-65660 now exploited in attacks &mdash; SecurityWeek</a> &nbsp;·&nbsp; <a class="src" href="https://petri.com/sharepoint-validation-flaw-remote-code-execution/" target="_blank" rel="noopener">SharePoint validation flaw raises remote code execution risks &mdash; Petri</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>CVE-2026-65660</b> (SharePoint Server 2016/2019/Subscription Edition): re-rated from medium <b>spoofing</b> to high-severity <b>authenticated RCE</b>; exploited ~6 weeks after patch, days after details went public; fileless in-memory <b>webshells</b>. Added to CISA KEV <b>Sept 25</b>, federal deadline <b>Sept 28</b>.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Microsoft, Tenable, CrowdStrike</b> and <b>Palo Alto Networks</b> cover patch prioritization, exposure management and detection of in-memory webshells. The value is a queue driven by real exploitation, not by a first-pass severity label that can change.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">A bug labelled &ldquo;spoofing&rdquo; turns out to be remote code execution. Which should you have patched first &mdash; the label or the flaw? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">4 &nbsp; CLOUD</td><td class="seccount">ACCESS INFRASTRUCTURE · ZERO-DAY</td></tr></table>
+  <div class="kicker">THE MACHINE THAT AUTHORIZES ACCESS GOT AN RCE</div>
+  <h3 class="ihead">F5 BIG-IP APM &mdash; acting as an OAuth authorization server &mdash; was exploited for unauthenticated remote code execution.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>F5 disclosed <b>CVE-2026-94127</b>, a critical (<b>CVSS 9.8</b>) heap-overflow in BIG-IP Access Policy Manager under active exploitation. When BIG-IP APM is configured as an <b>OAuth authorization server</b> &mdash; the component that issues access tokens to your applications &mdash; an unauthenticated attacker can send crafted traffic and achieve remote code execution. CISA added it to the KEV catalog on September 22 with a three-day federal deadline. Compromising the system that hands out access tokens is close to holding the master key to everything behind it.</p>
+<p><b>Our read.</b> Access infrastructure is tier-0. The gateways, identity providers and token-issuing services that sit in front of your applications deserve the same protection and patch urgency as domain controllers, because a foothold there converts into legitimate-looking access everywhere. Patch affected BIG-IP now, take management and OAuth endpoints off untrusted networks, and rotate signing keys and tokens if there is any doubt. The safest assumption after an authorization-server bug is that some access it granted was not yours to trust.</p></div>
+  <div class="sources"><a class="src" href="https://www.rapid7.com/blog/post/etr-cve-2026-94127-critical-unauthenticated-rce-in-f5-big-ip-apm/" target="_blank" rel="noopener">CVE-2026-94127: critical unauthenticated RCE in F5 BIG-IP APM &mdash; Rapid7</a> &nbsp;·&nbsp; <a class="src" href="https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html" target="_blank" rel="noopener">F5 patches critical BIG-IP APM zero-day exploited for RCE &mdash; The Hacker News</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-008-cloud.jpg" alt="A token-dispensing machine handing out glowing golden access badges as a shadowy hand seizes one, a red warning glow"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>CVE-2026-94127</b>: F5 BIG-IP APM heap-overflow, <b>CVSS 9.8</b>, <b>unauthenticated RCE</b>, actively exploited &mdash; when APM acts as an <b>OAuth authorization server</b>. Added to CISA KEV <b>Sept 22</b>, federal deadline <b>Sept 25</b>. The token-issuer is effectively a master key.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Zscaler, Palo Alto Networks, Okta</b> and <b>Microsoft</b> help move access to identity-aware, well-instrumented services and keep token-issuing endpoints off untrusted networks. Treat whatever issues access in your estate as the crown jewel it is.</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">The appliance that authorizes access just took an unauthenticated RCE. Who authorizes the authorizer? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">5 &nbsp; INFRASTRUCTURE &amp; HYBRID CLOUD</td><td class="seccount">OT SECURITY · M&amp;A</td></tr></table>
+  <div class="kicker">A $4.1 BILLION BET THAT OT SECURITY IS CONSOLIDATING</div>
+  <h3 class="ihead">Accenture is taking a majority stake in Dragos and buying runZero and NetRise &mdash; a sign the OT-security market is platformizing.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>In a deal valued around <b>$4.1 billion</b>, Accenture is taking a majority stake in industrial-security specialist Dragos and fully acquiring <b>runZero</b> (asset discovery and attack-surface intelligence, founded by Metasploit creator HD Moore) and <b>NetRise</b> (firmware and software-supply-chain analysis), which will operate under Dragos. Together the three are projected at roughly <b>$208 million in ARR</b>. The strategic message: securing operational technology &mdash; the systems that run factories, utilities and physical infrastructure &mdash; is consolidating from point tools into integrated platforms with big-integrator backing.</p>
+<p><b>Our read.</b> Consolidation cuts both ways for buyers. An integrated OT platform can mean fewer seams and one view of asset, exposure and threat &mdash; genuinely valuable when you cannot even list what is on your plant floor. But it also concentrates your dependency on one vendor and one integrator, so negotiate exit rights and data portability up front. If OT is in your estate, use this moment to get the fundamentals first: a complete asset inventory and network segmentation between IT and OT, regardless of whose logo is on the platform.</p></div>
+  <div class="sources"><a class="src" href="https://www.securityweek.com/accenture-to-acquire-majority-stake-in-dragos-all-of-runzero-netrise-in-4-1-billion-ot-cybersecurity-push/" target="_blank" rel="noopener">Accenture to acquire majority stake in Dragos, all of runZero, NetRise in $4.1B OT push &mdash; SecurityWeek</a> &nbsp;·&nbsp; <a class="src" href="https://industrialcyber.co/news/accenture-expands-ot-cybersecurity-capabilities-with-dragos-stake-acquires-runzero-and-netrise/" target="_blank" rel="noopener">Accenture expands OT cybersecurity with Dragos stake, acquires runZero and NetRise &mdash; Industrial Cyber</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody">Accenture: majority stake in <b>Dragos</b> (valued ~$3.25B) plus full acquisition of <b>runZero</b> and <b>NetRise</b>; total deal ~<b>$4.1B</b>, combined ARR ~<b>$208M</b> (up 53% YoY). runZero adds asset discovery and exposure; NetRise adds firmware and supply-chain analysis. OT security is platformizing.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Dell, HPE, Lenovo</b> and <b>IBM</b> anchor hardened infrastructure, while <b>CrowdStrike, Tenable, Fortinet, Cisco</b> and <b>Palo Alto Networks</b> bring OT-aware detection and exposure. Whatever platform you choose, insist on asset inventory, IT/OT segmentation, data portability and clear exit rights.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">$4.1B buys three OT-security firms delivering about $208M in ARR. Roughly what revenue multiple is that? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">6 &nbsp; NETWORK &amp; CONNECTIVITY</td><td class="seccount">EDGE · ZERO-DAY</td></tr></table>
+  <div class="kicker">CITRIX NETSCALER, EXPLOITED WORLDWIDE</div>
+  <h3 class="ihead">Two NetScaler RCE zero-days hit every default deployment &mdash; and were being exploited for weeks before the patch.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Citrix confirmed two critical remote code execution zero-days in NetScaler ADC and Gateway, <b>CVE-2026-88771</b> and <b>CVE-2026-88772</b>, both rated <b>9.5</b> and both exploited in the wild before disclosure. CVE-2026-88771, an input-validation flaw, lets an unauthenticated attacker run commands on <b>every affected deployment, including the default configuration</b> &mdash; no special feature required. CISA added both to its KEV catalog on September 27, reporting global exploitation, and defenders were urged to shut down exposed NetScalers where they could not patch immediately. Attackers have been planting webshells for weeks.</p>
+<p><b>Our read.</b> NetScaler is a remote-access front door, so treat this as an emergency, not a maintenance item: patch to fixed builds now, and because exploitation predates disclosure, assume compromise &mdash; hunt for webshells and anomalous sessions rather than trusting that patching alone closes the incident. The recurring lesson is unchanged: internet-facing access appliances are prime targets, and every one you can put behind identity-aware access or retire is one fewer pre-patch zero-day to survive.</p></div>
+  <div class="sources"><a class="src" href="https://www.helpnetsecurity.com/2026/09/28/citrix-netscaler-rce-zero-days-exploited-for-weeks-cve-2026-88771-cve-2026-88772/" target="_blank" rel="noopener">Citrix NetScaler RCE zero-days exploited globally for weeks &mdash; Help Net Security</a> &nbsp;·&nbsp; <a class="src" href="https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/" target="_blank" rel="noopener">Citrix confirms two NetScaler RCE zero-days exploited in attacks &mdash; BleepingComputer</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-008-network.jpg" alt="A grand shared gateway building with a glowing crack splitting the arch as a small figure slips through, connected offices behind"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>CVE-2026-88771 / -88772</b> (Citrix NetScaler ADC &amp; Gateway): critical RCE, both <b>CVSS 9.5</b>, exploited as <b>zero-days</b> for weeks. -88771 hits <b>every default deployment</b>, unauthenticated. Added to CISA KEV <b>Sept 27</b>; global exploitation; webshells observed. Assume compromise and hunt.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Zscaler, Cisco, Palo Alto Networks, Fortinet</b> and <b>Check Point</b> offer identity-based access that shrinks reliance on internet-facing gateways. After a pre-disclosure zero-day, prioritize vendors on disclosure speed and on how much attack surface their model removes, not just patch cadence.</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Every default NetScaler configuration is affected and it is being exploited. How many unpatched ones are safe to leave online? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">7 &nbsp; IDENTITY &amp; ACCESS</td><td class="seccount">PHISHING · MFA BYPASS</td></tr></table>
+  <div class="kicker">THEY BEAT MFA WITHOUT STEALING A PASSWORD</div>
+  <h3 class="ihead">Microsoft disrupted EvilTokens, a phishing service that hijacked 12,000 inboxes by abusing the device-code login flow.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Microsoft, with law enforcement and partners, disrupted <b>EvilTokens</b>, a phishing-as-a-service platform that compromised more than <b>12,000 inboxes</b> across over <b>10,000 organizations</b> since February. Its specialty was <b>device-code phishing</b>: rather than stealing passwords, it abused the legitimate device-code authentication flow to capture access tokens &mdash; sailing past MFA, because the victim really did approve a real login prompt. Two suspected administrators were arrested in the UK. Targets spanned wholesale, construction, financial services, real estate, higher education and healthcare.</p>
+<p><b>Our read.</b> MFA is necessary but no longer sufficient. Device-code and token-theft attacks turn a trusting user into the exploit, so add the controls that catch stolen sessions: restrict the device-code flow to where it is genuinely needed, enforce phishing-resistant methods (passkeys, FIDO2) for sensitive access, and use conditional access plus token-protection and anomaly detection to spot a token used from the wrong device or place. Train people that approving an unexpected sign-in prompt is the attack. <i>(Identity is where this quarter&rsquo;s incidents keep landing.)</i></p></div>
+  <div class="sources"><a class="src" href="https://www.bleepingcomputer.com/news/security/eviltokens-phaas-disrupted-after-compromising-12-000-microsoft-accounts/" target="_blank" rel="noopener">EvilTokens PhaaS disrupted after compromising 12,000 Microsoft accounts &mdash; BleepingComputer</a> &nbsp;·&nbsp; <a class="src" href="https://thehackernews.com/2026/09/microsoft-takes-down-eviltokens-device.html" target="_blank" rel="noopener">Microsoft takes down EvilTokens device-code phishing service &mdash; The Hacker News</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-008-identity.jpg" alt="A person tapping approve on a phone login prompt as a shadowy hand catches the glowing session token, an untouched padlock nearby"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>EvilTokens</b> (phishing-as-a-service, live since Feb 2026): <b>12,000+</b> inboxes at <b>10,000+</b> organizations, fueling business email compromise. Method: <b>device-code phishing</b> captures access tokens and <b>bypasses MFA</b> without stealing a password. Two admins arrested in the UK.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Microsoft, Okta, CrowdStrike</b> and <b>Cisco</b> (Duo) provide phishing-resistant authentication, conditional access and token-protection. The upgrade this week demands: restrict device-code flows, require passkeys for sensitive access, and detect tokens used from an unexpected device.</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">A phishing kit defeats MFA without ever taking a password. So what did it actually steal? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">8 &nbsp; CYBERSECURITY</td><td class="seccount">STATE ACTORS · EXPLOITATION</td></tr></table>
+  <div class="kicker">FAKE JOBS, REAL LOSSES &mdash; AND A BUSY KEV WEEK</div>
+  <h3 class="ihead">North Korea&rsquo;s &lsquo;Contagious Interview&rsquo; crews drained thousands of wallets, as CISA logged more exploited flaws.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>A joint FBI/Japanese advisory tied North Korea&rsquo;s <b>WaterPlum</b> group &mdash; better known as <b>Contagious Interview</b> &mdash; to the compromise of at least <b>30,000 devices</b> in more than 100 countries and theft from over <b>7,000 crypto wallets</b>, sending about <b>$10.71 million</b> to the regime. The lure is a fake job: developers are talked into installing malware disguised as a coding test or interview app. Meanwhile CISA added freshly exploited flaws to its catalog this week, including a <b>WSO2</b> path-traversal and an <b>Adobe Commerce/Magento</b> authorization bug &mdash; a reminder that the exploitation treadmill never pauses.</p>
+<p><b>Our read.</b> Your hiring and developer-onboarding pipeline is now an attack surface. Warn candidates and staff that &ldquo;run this take-home app&rdquo; can be the payload, run interview software in isolated or virtual environments, and never let a personal dev machine hold production or wallet credentials. On the exploitation side, keep the discipline that works: patch KEV-listed flaws fast, shrink internet-facing surface, and assume anything with a public exploit is being scanned within hours.</p></div>
+  <div class="sources"><a class="src" href="https://thehackernews.com/2026/09/contagious-interview-campaign.html" target="_blank" rel="noopener">Contagious Interview campaign compromises 30,000 devices, steals $10.71M &mdash; The Hacker News</a> &nbsp;·&nbsp; <a class="src" href="https://www.infosecurity-magazine.com/news/north-korean-waterplum-30000/" target="_blank" rel="noopener">North Korean WaterPlum hits 30,000 devices and steals $10.7M &mdash; Infosecurity Magazine</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody">North Korea&rsquo;s <b>WaterPlum / Contagious Interview</b>: <b>30,000+</b> devices in 100+ countries, <b>7,000+</b> wallets drained, ~<b>$10.71M</b> stolen via fake-job malware (BeaverTail, InvisibleFerret, OtterCookie). CISA KEV also added exploited <b>WSO2</b> and <b>Adobe Commerce/Magento</b> flaws this week.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>CrowdStrike, Microsoft, Palo Alto Networks</b> and <b>Fortinet</b> for detection and response, with <b>Tenable</b> on exposure. Pair endpoint controls with a hardened hiring/onboarding process &mdash; isolated environments for candidate code, and no production or wallet secrets on personal machines.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">One crew drained about $10.7M from roughly 7,000 wallets. About how much per wallet? <i>(answer at the foot)</i></div></div>
+</section>
+  <div class="secrule"></div>
+<table class="sechead"><tr><td class="secname">THE THROUGH-LINE</td><td class="seccount">ACROSS ALL EIGHT LAYERS</td></tr></table>
+<div class="capstone"><b>The week has one spine: your systems are increasingly run by, and attacked through, things that are not people.</b> Machines are now the majority of your traffic and the fastest-growing buyers and readers you have (front page, AI) &mdash; and attackers have noticed, going after the machinery of trust rather than the front door: the data an approval system reads (Data), the appliance that issues access tokens (Cloud), the gateway that lets people in (Network), and the login flow itself (Identity). Even the espionage is social, not technical &mdash; a fake job, a trusted install (Cybersecurity) &mdash; while the market consolidates the tools meant to watch it all (Infrastructure). Design for machine readers on purpose, and defend the integrity of the systems they trust &mdash; because both your customers and your adversaries are now, more often than not, software.</div>
+  <div class="promo">
+  <div class="promohead">You can own every security tool on the market and still be one click from a breach &mdash; because the weakest link has never been the technology. It&rsquo;s people.</div>
+  <div class="promobody">That&rsquo;s what a real awareness program fixes. <b>CyberSainya designs and delivers custom cyber-awareness workshops</b> for leadership, teams and boards &mdash; in any sector, at any stage of your transformation &mdash; live or virtual, scoped to your people and the threats you actually face. This month&rsquo;s stories (a phishing kit that beat MFA, fake-job malware, a backend that lied to its own approvers) all turned on a human decision, not a missing tool.</div>
+  <a class="promocta" href="mailto:info@cybersainya.com?subject=Cyber-awareness%20workshop%20enquiry%20%E2%80%94%20The%20Signal">Email us at info@cybersainya.com for custom workshop plans &amp; current rates &rarr;</a>
+  <div class="promosrc">October is <b>Cybersecurity Awareness Month</b>. &nbsp;Sources: <a href="https://www.cisa.gov/cybersecurity-awareness-month" target="_blank" rel="noopener">CISA &mdash; Awareness Month</a> &nbsp;·&nbsp; <a href="https://insider.govtech.com/california/events/from-detection-to-recovery-protecting-state-local-and-education-organizations-from-identity-attacks" target="_blank" rel="noopener">GovTech &mdash; identity attacks</a></div>
+</div>
+  <div class="teaseranswer">Brain teaser answers &mdash; <b>Machine majority:</b> no &mdash; the gap only widens. <b>AI hotline:</b> about two months. <b>Lying data:</b> no &mdash; integrity is part of security. <b>Spoofing bug:</b> the flaw, not the label. <b>Authorizer:</b> you do &mdash; patch it. <b>OT deal:</b> roughly 20x ARR. <b>NetScaler:</b> zero. <b>MFA bypass:</b> the session token. <b>Per wallet:</b> about $1,530.</div>
+
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">ABOUT CYBERSAINYA</td><td class="seccount">DIGITAL TRANSFORMATION PARTNER</td></tr></table>
+  <p class="aboutlede"><b>CyberSainya is a digital transformation partner.</b> We help organizations turn IT, security, and AI from sources of risk into engines of growth &mdash; complexity made simple. That means clear strategy, the right technology, and a partner who stays in the room long after the decision is made: advisory and consulting, security and IT assessments, executive workshops, and hands-on execution. Through our AI products division, <b>CernoGlobus</b>, we build practical, security-by-design AI that puts enterprise-grade protection behind everyday automation.</p>
+  <div class="aboutcols">
+    <div class="aboutcol"><div class="abouth">Advisory &amp; assessments</div><div class="aboutt">Benchmark your control plane across all eight layers, then a clear plan to close the gaps &mdash; not a 90-page PDF nobody reads. <a href="https://assess.cybersainya.com" target="_blank" rel="noopener">Take the free assessment &rarr;</a></div></div>
+    <div class="aboutcol"><div class="abouth">CernoGlobus &middot; AI division</div><div class="aboutt">Security-by-design AI coworkers that automate the busywork without opening one more door.</div></div>
+  </div>
+  <div class="vendorneutral"><b>Vendor-neutral by design.</b> CyberSainya partners with Anthropic, Adobe, AWS, Check Point, Cisco, CrowdStrike, Databricks, Dell, Fortinet, Google Cloud, HPE, IBM, Lenovo, Lightspeed, Microsoft, Okta, Palo Alto Networks, Red Hat, Tenable, and Zscaler. So the tools we recommend fit your environment and your risk, never a quota.</div>
+  <div class="footer">
+    <div><b>The Signal</b> &mdash; a weekly Executive Briefing from <b>CyberSainya</b>. Read every issue at <a href="https://cybersainya.com/signal">cybersainya.com/signal</a> · Subscribe free at <a href="https://cybersainya.com/contactus">cybersainya.com/contactus</a></div>
+    <div>cybersainya.com</div>
+  </div>
+</div>
+</body></html>
