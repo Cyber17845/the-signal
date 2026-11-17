@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Signal — Issue 015 | CyberSainya</title>
+<meta name="description" content="A months-old server defect knocked Outlook, Teams and Copilot offline across 74 countries for about a day — the consolidation that makes your stack efficient also makes it fragile. Eight layers on mapping single points of failure and pricing resilience into the architecture, plus Google&#x27;s TPUs as a product line, IBM&#x27;s quantum roadmap, securing the agents that carry your keys, and an Outlook zero-day that steals logins — every claim sourced.">
+<link rel="canonical" href="https://signal.cybersainya.com/issue-015.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CyberSainya">
+<meta property="og:title" content="The Signal — Issue 015 | CyberSainya">
+<meta property="og:description" content="A months-old server defect knocked Outlook, Teams and Copilot offline across 74 countries for about a day — the consolidation that makes your stack efficient also makes it fragile. Eight layers on mapping single points of failure and pricing resilience into the architecture, plus Google&#x27;s TPUs as a product line, IBM&#x27;s quantum roadmap, securing the agents that carry your keys, and an Outlook zero-day that steals logins — every claim sourced.">
+<meta property="og:url" content="https://signal.cybersainya.com/issue-015.html">
+<meta property="og:image" content="https://signal.cybersainya.com/issue-015-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Signal — Issue 015 | CyberSainya">
+<meta name="twitter:description" content="A months-old server defect knocked Outlook, Teams and Copilot offline across 74 countries for about a day — the consolidation that makes your stack efficient also makes it fragile. Eight layers on mapping single points of failure and pricing resilience into the architecture, plus Google&#x27;s TPUs as a product line, IBM&#x27;s quantum roadmap, securing the agents that carry your keys, and an Outlook zero-day that steals logins — every claim sourced.">
+<meta name="twitter:image" content="https://signal.cybersainya.com/issue-015-cover.jpg">
+<style>
+  :root{--ink:#1a1815;--rust:#a24e1f;--rust2:#b0561f;--gray:#6f6a63;--line:#1a1815;--box:#f1efe8;--navy:#0B2545;--paper:#ffffff;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#e9e7e2;font-family:Georgia,'Times New Roman',serif;color:var(--ink);}
+  .page{max-width:1040px;margin:24px auto;background:var(--paper);padding:44px 54px 40px;box-shadow:0 2px 14px rgba(0,0,0,.18);}
+  .mast{display:flex;justify-content:space-between;align-items:center;}
+  .mastL{display:flex;align-items:center;gap:16px;}
+  .mastL img{height:70px;display:block;}
+  .mastwordmark{font-family:Georgia,serif;font-weight:700;font-size:26px;letter-spacing:2px;color:var(--ink);}
+  .divv{width:1px;height:44px;background:#cfc9bf;}
+  .eyebrow{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;letter-spacing:4px;color:var(--gray);}
+  .mastR{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#3a3630;text-align:right;}
+  .mastR b{color:var(--ink);}
+  .rule-thin{border:0;border-top:1px solid #c9c3b8;margin:14px 0 6px;}
+  .rule-thick{border:0;border-top:4px solid var(--line);margin:10px 0 0;}
+  .titlerow{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;}
+  .paptitle{font-size:66px;line-height:.95;font-weight:700;letter-spacing:-.5px;margin:0;}
+  .trades{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#3a3630;text-align:right;max-width:430px;line-height:1.5;}
+  .mission{font-size:14.5px;color:#4a453e;font-style:italic;margin:8px 0 0;}
+  .intable{width:100%;border-collapse:collapse;margin-top:14px;background:#faf9f6;border:1px solid #d8d2c6;}
+  .intable td{border:1px solid #ddd7cb;vertical-align:top;padding:11px 12px;}
+  .inlabel{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--gray);width:64px;background:#f2efe8;border-left:4px solid var(--rust)!important;}
+  .tz4{width:19%;}
+  .tzk{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:1px;color:var(--gray);margin-bottom:4px;}
+  .tzt{font-size:12.5px;font-weight:700;line-height:1.3;color:var(--ink);}
+  .online{width:96px;text-align:center;background:#faf9f6;}
+  .onlinebadge{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:800;font-size:19px;line-height:50px;margin:0 auto 7px;letter-spacing:1px;}
+  .onlinet{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#4a453e;line-height:1.4;}
+  .onlinet b{font-size:11.5px;color:var(--ink);}
+  .lead-eyebrow{display:inline-block;background:var(--rust);color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;padding:5px 12px;margin:26px 0 4px;}
+  .leadhead{font-size:40px;line-height:1.08;font-weight:700;margin:8px 0 14px;letter-spacing:-.4px;}
+  .thenumband{background:var(--navy);color:#eef3f8;padding:16px 22px;border-radius:2px;display:flex;align-items:center;gap:24px;margin:6px 0 18px;}
+  .thenumband .bignum{font-family:Georgia,serif;font-size:40px;font-weight:700;color:#fff;line-height:1;white-space:nowrap;}
+  .thenumband .tbwrap{flex:1;min-width:0;}
+  .thenumband .tblabel{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:2px;color:#9db6d6;margin-bottom:3px;}
+  .thenumband .tbtext{font-size:13px;line-height:1.5;}
+  .thenumband .tbtext b{color:#fff;}
+  .thenumband .tbsrc{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8fa9ca;margin-top:6px;letter-spacing:1px;}
+  .leadprose{font-size:14px;line-height:1.62;text-align:justify;}
+  .leadprose p{margin:0 0 11px;} .leadprose p:first-child{margin-top:0;}
+  .leadbody{overflow:hidden;}
+  .leadhero{float:right;width:40%;height:auto;margin:0 0 14px 22px;border:1px solid #ece7dd;border-radius:3px;background:#f4f1e8;}
+  .dropfollow b{font-variant:small-caps;letter-spacing:.5px;}
+  .secrule{border-top:3px solid var(--line);margin:30px 0 0;}
+  .sechead{width:100%;border-collapse:collapse;margin-top:8px;}
+  .secname{font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:800;letter-spacing:1px;color:var(--ink);}
+  .seccount{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gray);text-align:right;}
+  .kicker{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--rust);margin:16px 0 6px;}
+  .ihead{font-size:25px;line-height:1.14;font-weight:700;margin:0 0 8px;letter-spacing:-.3px;}
+  .hair{border-top:1px solid #d8d2c6;margin:0 0 14px;}
+  .prose2{column-count:2;column-gap:30px;font-size:14px;line-height:1.62;text-align:justify;}
+  .prose2 p{margin:0 0 11px;} .prose2 p:first-child{margin-top:0;}
+  .numbox{background:var(--box);border-left:5px solid var(--rust);padding:12px 15px;}
+  .vendbox{background:#f7fafe;border:1px solid #cddaea;border-left:5px solid var(--navy);padding:12px 15px;}
+  .boxlabel{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:var(--rust);margin-bottom:6px;}
+  .boxlabel.vend{color:var(--navy);}
+  .boxbody{font-size:12.5px;line-height:1.55;color:#2a2721;}
+  .sources{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--rust2);line-height:1.7;margin:12px 0 2px;}
+  .sources a{color:var(--rust2);text-decoration:underline;text-underline-offset:2px;}
+  .sources a:hover{color:var(--rust);}
+  .capstone{background:var(--navy);color:#eef3f8;padding:18px 22px;font-size:14.5px;line-height:1.62;margin-top:12px;border-radius:2px;}
+  .capstone b{color:#ffffff;}
+  .pdesk{margin-top:12px;background:#faf9f6;border:1px solid #e2dccf;border-left:5px solid var(--rust);padding:15px 18px;}
+  .pdname{font-family:Georgia,serif;font-weight:700;font-size:22px;color:var(--ink);line-height:1.08;}
+  .pdrole{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--rust);margin:3px 0 9px;text-transform:uppercase;}
+  .pdbody{font-size:13px;line-height:1.6;color:#2a2721;text-align:justify;} .pdbody b{color:var(--ink);}
+  .pdlayers{font-size:12.5px;line-height:1.55;color:#2a2721;margin-top:9px;background:#f1efe8;border-left:4px solid var(--navy);padding:9px 12px;} .pdlayers b{color:var(--ink);}
+  .pdnote{font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.5;color:#4a453e;margin-top:10px;border-top:1px solid #e2dccf;padding-top:8px;} .pdnote b{color:var(--ink);} .pdnote a{color:var(--rust);font-weight:700;text-decoration:none;}
+  .furniture{margin-top:14px;}
+  .furniture.noimg{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;}
+  .furniture.noimg .numbox,.furniture.noimg .vendbox{margin:0;}
+  .furniture.withimg{display:grid;grid-template-columns:0.95fr 1.05fr;gap:16px;align-items:stretch;min-height:236px;}
+  .fimg{display:flex;min-width:0;}
+  .furnimg{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border:1px solid #ece7dd;border-radius:3px;background:#f4f1e8;}
+  .fboxes{display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .fboxes .numbox,.fboxes .vendbox{margin:0;flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-start;}
+  .layer .teaser.railfit{max-width:100%;margin:14px 0 0;}
+  .funbar{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 0;}
+  .pwotw{background:#f7f3ea;border-left:5px solid var(--rust);padding:8px 15px;margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#3a3630;}
+  .pwotw b{color:var(--rust);letter-spacing:1.5px;font-size:11px;}
+  .pwotw code{font-family:'Courier New',monospace;background:#fff;border:1px solid #e2dccf;padding:1px 7px;border-radius:3px;color:var(--navy);font-weight:700;}
+  .pwotw i{color:#6f6a63;}
+  .teaser{background:#f2f6fb;border:1px solid #cddaea;border-left:5px solid var(--navy);padding:12px 15px;margin:16px 0;}
+  .teaser.wide{max-width:100%;}
+  .teaser .tlabel{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:var(--navy);margin-bottom:5px;}
+  .teaser .tbody{font-size:13px;line-height:1.5;color:#2a2721;}
+  .teaser .tbody i{color:#8a857c;font-size:11.5px;}
+  .teaseranswer{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#8a857c;font-style:italic;text-align:center;margin:20px 0 0;}
+  .featgrid3{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;align-items:stretch;}
+  .fcard{background:#faf9f6;border:1px solid #e2dccf;border-left:4px solid var(--rust);padding:11px 13px;flex:1 1 230px;}
+  .ftag{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:800;letter-spacing:1.5px;color:#fff;padding:2px 7px;border-radius:2px;margin-bottom:6px;}
+  .ftag.ent{background:var(--navy);} .ftag.con{background:var(--rust);}
+  .fname{font-family:Georgia,serif;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:4px;line-height:1.2;}
+  .fwhy{font-size:12px;line-height:1.5;color:#3a3630;} .fwhy b{color:var(--ink);}
+  .fsrc{font-family:Arial,Helvetica,sans-serif;font-size:9.5px;color:var(--rust2);margin-top:6px;} .fsrc a{color:var(--rust2);text-decoration:underline;}
+  .evgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+  .evcard{background:#f7fafe;border:1px solid #cddaea;border-left:4px solid var(--navy);padding:10px 13px;}
+  .evdate{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;letter-spacing:1px;color:var(--rust);margin-bottom:2px;}
+  .evname{font-family:Georgia,serif;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:3px;}
+  .evmeta{font-size:12px;line-height:1.45;color:#3a3630;}
+  .promo{background:var(--navy);color:#eef3f8;padding:20px 24px;border-radius:2px;border-left:6px solid var(--rust);margin-top:22px;}
+  .promohead{font-family:Georgia,serif;font-size:20px;line-height:1.26;font-weight:700;color:#fff;margin-bottom:10px;}
+  .promobody{font-size:14px;line-height:1.6;color:#eef3f8;}
+  .promobody b{color:#fff;}
+  .promocta{display:inline-block;margin-top:12px;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:13.5px;color:#fff;text-decoration:underline;text-underline-offset:3px;}
+  .promosrc{font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#8fa9ca;margin-top:12px;}
+  .promosrc a{color:#9db6d6;text-decoration:underline;}
+  .subbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:22px;background:#f7f3ea;border:1px solid #e2dccf;border-left:5px solid var(--navy);padding:13px 18px;border-radius:2px;}
+  .subtxt{font-size:13.5px;line-height:1.5;color:#3a3630;} .subtxt b{color:var(--ink);}
+  .subcta{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:13px;letter-spacing:.5px;color:#fff;background:var(--navy);padding:9px 18px;border-radius:3px;text-decoration:none;white-space:nowrap;}
+  .aboutlede{font-size:15px;line-height:1.62;margin:14px 0 16px;text-align:justify;}
+  .aboutcols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:16px;}
+  .abouth{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px;}
+  .aboutt{font-size:13.5px;line-height:1.55;color:#3a3630;}
+  .aboutt a{color:var(--rust);font-weight:700;text-decoration:none;}
+  .vendorneutral{background:var(--box);border-left:5px solid var(--rust);padding:15px 18px;font-size:13.5px;line-height:1.6;color:#2a2721;}
+  .vendorneutral b{color:var(--ink);}
+  .footer{margin-top:34px;border-top:4px solid var(--line);padding-top:16px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#4a453e;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .footer b{color:var(--ink);}
+  .footer a{color:var(--navy);font-weight:700;text-decoration:none;}
+  @media (max-width:760px){
+    .page{padding:26px 20px 30px;} .paptitle{font-size:44px;} .titlerow{flex-direction:column;align-items:flex-start;gap:6px;}
+    .trades{text-align:left;} .leadhead{font-size:28px;} .leadprose{column-count:1;}
+    .intable,.intable tbody,.intable tr,.intable td{display:block;width:100%!important;}
+    .aboutcols{grid-template-columns:1fr;gap:16px;} .footer{flex-direction:column;align-items:flex-start;gap:8px;}
+    .funbar{grid-template-columns:1fr;} .teaser{max-width:100%;}
+    .prose2{column-count:1;}
+    .furniture.noimg,.furniture.withimg{grid-template-columns:1fr;min-height:0;}
+    .furnimg{height:auto;max-height:320px;}
+    .leadhero{float:none;width:100%;margin:10px 0;}
+    .featgrid3,.evgrid{grid-template-columns:1fr;}
+    .subbar{flex-direction:column;align-items:flex-start;gap:10px;}
+    .thenumband{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+  @media print{ body{background:#fff;} .page{box-shadow:none;margin:0;max-width:none;padding:26px 30px;}
+    .layer,.numbox,.vendbox,.thenumband,.capstone,.promo{break-inside:avoid;} }
+</style></head>
+<body><div style="background:#4a4661;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;text-align:center;"><a href="https://signal.cybersainya.com/" style="color:#fff;text-decoration:none;">The Signal &middot; All editions &rarr;</a></div>
+<div class="page">
+  <div class="mast">
+    <div class="mastL">
+      <img src="issue-015-logo.png" alt="CyberSainya">
+      <div class="mastwordmark">CYBERSAINYA</div>
+      <div class="divv"></div>
+      <div class="eyebrow">EXECUTIVE BRIEFING</div>
+    </div>
+    <div class="mastR"><b>Issue 015</b> &nbsp; Tuesday, November 17, 2026 &nbsp;·&nbsp; Weekly</div>
+  </div>
+  <hr class="rule-thin">
+  <div class="titlerow">
+    <h1 class="paptitle">The Signal</h1>
+    <div class="trades">Silicon &amp; Cloud · Semiconductors · Emerging Tech · Enterprise Software · Network · Identity · Cybersecurity · Markets</div>
+  </div>
+  <div class="mission">Eight layers of your architecture, one briefing. Every item moves a number on your risk register, changes what you owe under compliance, or changes what your stack costs to run.</div>
+  <hr class="rule-thick">
+
+  <div class="funbar">
+  <div class="pwotw"><b>BUZZWORD OF THE WEEK</b> &nbsp;<code>failure domain</code> <i>&mdash; everything that goes down together when one thing breaks. This week, for millions, it was &ldquo;the whole office.&rdquo;</i></div>
+  <div class="pwotw"><b>PASSWORD OF THE WEEK</b> &nbsp;<code>dont-put-it-all-in-one-cloud</code> <i>&mdash; the lesson 74 countries relearned the hard way on Nov 12.</i></div>
+</div>
+
+  <table class="intable">
+<tr>
+  <td class="inlabel" rowspan="2">IN THIS<br>ISSUE</td>
+  <td class="tz4"><div class="tzk">SILICON &amp; CLOUD</div><div class="tzt">Google&rsquo;s TPUs split into a product line</div></td><td class="tz4"><div class="tzk">SEMICONDUCTORS</div><div class="tzt">A $720M bet on a chip that isn&rsquo;t a GPU</div></td><td class="tz4"><div class="tzk">EMERGING TECH</div><div class="tzt">IBM&rsquo;s quantum roadmap crosses 1,000 qubits</div></td><td class="tz4"><div class="tzk">ENTERPRISE SOFTWARE</div><div class="tzt">AI moves from pilot to the payroll</div></td>
+  <td class="online" rowspan="2">
+     <a href="https://www.cybersainya.com/contactus" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+       <div class="onlinebadge">CS</div>
+       <div class="onlinet"><b>Get it in your inbox</b><br>Subscribe free &mdash;<br>a new edition weekly</div>
+     </a>
+  </td>
+</tr>
+<tr><td class="tz4"><div class="tzk">NETWORK</div><div class="tzt">The outage put resilience back on the agenda</div></td><td class="tz4"><div class="tzk">IDENTITY &amp; ACCESS</div><div class="tzt">Securing the agents that carry your keys</div></td><td class="tz4"><div class="tzk">CYBERSECURITY</div><div class="tzt">Patch-tonight: an Outlook zero-day steals your logins</div></td><td class="tz4"><div class="tzk">MARKETS</div><div class="tzt">Nvidia&rsquo;s number the whole market is waiting on</div></td></tr>
+</table>
+
+  <div class="lead-eyebrow">FRONT PAGE · THE CEO&rsquo;S STRATEGY DESK</div>
+  <h2 class="leadhead">For a day, the world&rsquo;s back office simply stopped.</h2>
+  <div class="thenumband">
+  <div class="bignum">74</div>
+  <div class="tbwrap">
+    <div class="tblabel">COUNTRIES WENT DARK</div>
+    <div class="tbtext">Countries where <b>Outlook, Teams and Copilot</b> were disrupted in the <b>~24-hour</b> Microsoft 365 outage that began Nov 12 &mdash; <b>not</b> a cyberattack, but a months-old server defect that crippled <b>80%+</b> of affected servers. Downdetector reports peaked near <b>130,000</b>.</div>
+    <div class="tbsrc">Al Jazeera / BleepingComputer / CNBC &middot; Nov 2026</div>
+  </div>
+</div>
+  <div class="leadbody">
+     <img class="leadhero" src="issue-015-lead.jpg" alt="A corporate office tower with every window dark at once while a cracked, sputtering cloud-server looms above, workers below reaching for an old telephone that still glows">
+     <div class="leadprose">
+<p><span class="dropfollow"><b>For about a</b></span> day, the back office of the world simply stopped. Beginning midday on <b>November 12</b>, a global <b>Microsoft 365</b> outage knocked out Outlook, Teams, Copilot and Exchange Online across <b>74 countries</b> for roughly <b>24 hours</b> &mdash; Outlook problem reports on Downdetector peaked near <b>130,000</b>. The cause was not a hack. Microsoft&rsquo;s preliminary post-incident report blamed a <b>months-old Windows server defect</b> that, under heavy traffic and reduced capacity, left <b>more than 80% of affected servers</b> unresponsive &mdash; and servers that recovered fell over again the moment real traffic returned. The fallout was physical: a Dublin hospital asked patients to phone instead of email, Australia&rsquo;s domestic-intelligence agency and police were hit, Japan&rsquo;s government IT was disrupted, and New Zealand paused visa processing.</p>
+<p>The uncomfortable lesson isn&rsquo;t about one vendor&rsquo;s bug. It&rsquo;s that the <b>consolidation that makes your stack efficient also makes it fragile</b>. The same single-provider integration that gives you tidy billing, one identity system and one admin console means that when that provider has a bad day, your email, your meetings, your security tooling and your AI assistant all go dark <i>together</i> &mdash; and no amount of your own redundancy helps, because the dependency is outside your walls.</p>
+<p><b>Our read.</b> Resilience is now a board-level question, not an IT footnote. Three moves. <b>Map your single points of failure</b> &mdash; honestly: if one cloud suite is email <i>and</i> identity <i>and</i> collaboration <i>and</i> security, that is one failure domain wearing four hats. <b>Build the analog fallback</b>: an out-of-band way to reach staff, customers and responders when the primary suite is down (the hospitals that switched to phones had a plan; many didn&rsquo;t). And <b>price resilience into the architecture</b> &mdash; a second channel for the few truly critical workflows, tested, not assumed. Efficiency through consolidation and resilience through diversification pull in opposite directions; the outage just made the trade-off everyone&rsquo;s problem.</p>
+</div>
+     <div class="sources"><a class="src" href="https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/" target="_blank" rel="noopener">Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide &mdash; BleepingComputer</a> &nbsp;·&nbsp; <a class="src" href="https://www.aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why" target="_blank" rel="noopener">Microsoft hit by global outages: what happened and why &mdash; Al Jazeera</a> &nbsp;·&nbsp; <a class="src" href="https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html" target="_blank" rel="noopener">Microsoft apologizes for massive outage that took down Outlook &mdash; CNBC</a></div>
+  </div>
+  <div class="teaser wide"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Your email, your identity, your meetings and your security console all run on one cloud suite. How many separate things is that, really &mdash; and how many of them fail at once? <i>(answer at the foot)</i></div></div>
+
+  <section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">1 &nbsp; SILICON &amp; CLOUD</td><td class="seccount">CUSTOM CHIPS · COMPETITION</td></tr></table>
+  <div class="kicker">GOOGLE&rsquo;S TPUs GROW UP INTO A PRODUCT LINE</div>
+  <h3 class="ihead">Google&rsquo;s custom AI chips are no longer one part &mdash; they&rsquo;re a segmented portfolio aimed at regulated industries, heavy compute and everyone in between. That&rsquo;s a direct challenge to Nvidia&rsquo;s default.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Google&rsquo;s <b>Tensor Processing Unit</b> line matured on two fronts this week. The seventh-generation <b>Ironwood (TPU v7)</b> is moving toward broad availability &mdash; Google claims more than <b>4&times;</b> the performance of the prior generation and the ability to lash up to <b>9,216 TPUs</b> into a single pod &mdash; and the company introduced two specialized variants: a <b>TPU 8tX</b> for government and regulated industries and a <b>TPU 8i Max</b> for compute-heavy work like coding assistants and drug discovery. Anthropic alone plans to use as many as <b>one million</b> Ironwood chips. When a chip becomes a <i>segmented product line</i>, the vendor is signaling demand deep enough to specialize &mdash; and building a credible alternative to the GPU as the default.</p>
+<p><b>Our read.</b> For most enterprises this isn&rsquo;t a buy decision yet, but it changes the strategic picture in two ways worth tracking. First, <b>leverage</b>: for the first time, the largest cloud providers (Google&rsquo;s TPUs, Amazon&rsquo;s Trainium/Inferentia) have silicon that can genuinely compete with Nvidia on cost and integration for <i>some</i> workloads &mdash; which means pricing power, and your negotiating position, may finally start to shift. Second, <b>lock-in</b>: custom silicon is tied to a specific cloud, so the cheapest performance-per-dollar can quietly become the hardest to leave. The move is to keep your models and workloads <b>portable</b> &mdash; trained and served through abstractions you can repoint &mdash; so you can chase the better economics these chips create without marrying the cloud that made them. Watch whose silicon your AI vendors actually run on; it increasingly decides their costs, and yours.</p></div>
+  <div class="sources"><a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">Weekly Tech Roundup: Google&rsquo;s TPU strategy, Nov 8&ndash;14, 2026 &mdash; The CODEW</a> &nbsp;·&nbsp; <a class="src" href="https://thenextweb.com/news/google-tpu-compute-internal-researchers-anthropic" target="_blank" rel="noopener">Google has sold so much TPU capacity its own researchers are queueing &mdash; TNW</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-015-semiconductors.jpg" alt="Custom silicon chips lined up like products on a shelf, one bearing a government crest and another a laboratory flask, a towering default GPU outnumbered behind them"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>Google Ironwood (TPU v7)</b> nearing broad availability: claimed <b>&gt;4&times;</b> prior-gen performance; up to <b>9,216 TPUs</b> per pod. Two new variants &mdash; <b>TPU 8tX</b> (government/regulated) and <b>TPU 8i Max</b> (compute-intensive: coding, drug discovery). <b>Anthropic</b> plans up to <b>1,000,000</b> Ironwood chips. A segmentation strategy aimed at Nvidia&rsquo;s default position in training and inference.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Google Cloud, AWS</b> (Trainium/Inferentia) and <b>Nvidia</b> now offer genuinely competing AI silicon; <b>Microsoft</b> and <b>Dell/HPE</b> package it. The strategy move: use the new competition for <b>pricing leverage</b>, but keep models and workloads <b>portable</b> so the cheapest performance-per-watt doesn&rsquo;t become the costliest cloud to leave.</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Google now sells one TPU for governments and another for drug discovery. When a chip becomes a <i>product line</i>, what is the vendor really telling you about demand? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">2 &nbsp; SEMICONDUCTORS</td><td class="seccount">FUNDING · ARCHITECTURE</td></tr></table>
+  <div class="kicker">A $720 MILLION BET ON A CHIP THAT ISN&rsquo;T A GPU</div>
+  <h3 class="ihead">UK startup Fractile raised $720M at a $7B valuation for an AI chip that stacks memory on logic &mdash; a wager that the real bottleneck in AI isn&rsquo;t compute, it&rsquo;s memory bandwidth.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>UK-based <b>Fractile</b> secured a <b>$720 million</b> Series C at a <b>$7 billion</b> post-money valuation, backed by Thrive Capital, Founders Fund, Lightspeed, Redpoint and the UK government&rsquo;s <b>Sovereign AI Venture Fund</b>. Its design stacks <b>DRAM directly on top of logic</b> to clear more memory bandwidth than conventional HBM-based parts &mdash; targeting one of the most stubborn limits in AI <b>inference</b>, where feeding data to the chip, not raw math, is often what caps throughput. The caveat is large: Fractile <b>has not shipped a production chip</b> (commercial silicon is targeted for 2027), making it the best-funded challenger with the least silicon in the field. Investors are betting that an <b>architectural</b> idea &mdash; not just a faster GPU &mdash; can crack the economics of serving AI at scale.</p>
+<p><b>Our read.</b> This is a &ldquo;watch the direction&rdquo; item, and the direction matters more than the company. The first phase of the AI build-out was about <b>compute</b>; the frontier is shifting to <b>memory and energy efficiency</b>, because the cost of <i>serving</i> models (inference) &mdash; not training them &mdash; is what dominates once something is in production, and memory bandwidth is the quiet governor on that cost. For buyers, two takeaways. The field of credible non-Nvidia options is widening, which over time means more choice and more pricing pressure on inference &mdash; good for anyone running AI at scale. But &ldquo;funded&rdquo; is not &ldquo;shipping&rdquo;: treat 2027-and-beyond silicon as a roadmap signal, not a procurement plan, and judge these challengers on <b>delivered performance-per-watt</b> when the parts actually arrive. The useful habit now is to start asking your inference vendors about memory bandwidth and efficiency, not just peak FLOPS.</p></div>
+  <div class="sources"><a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">Weekly Tech Roundup: Fractile&rsquo;s $720M raise, Nov 8&ndash;14, 2026 &mdash; The CODEW</a> &nbsp;·&nbsp; <a class="src" href="https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia" target="_blank" rel="noopener">The custom AI ASIC state of play &mdash; Tom&rsquo;s Hardware</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>Fractile</b> (UK): <b>$720M</b> Series C at <b>$7B</b> post-money &mdash; investors incl. Thrive, Founders Fund, Lightspeed, Redpoint, UK <b>Sovereign AI Venture Fund</b>. Design: <b>DRAM stacked on logic</b> for higher memory bandwidth than HBM, aimed at AI <b>inference</b>. Caveat: <b>no production chip yet</b> (commercial silicon targeted <b>2027</b>) &mdash; best-funded challenger with the least shipped silicon.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Nvidia</b> sets the inference default; challengers (<b>Fractile</b>, and hyperscaler silicon from <b>Google/AWS</b>) chase memory- and energy-efficiency angles. The move: as inference cost dominates in production, ask vendors about <b>memory bandwidth and performance-per-watt</b>, not peak throughput &mdash; and treat pre-ship roadmaps as signals, not plans. (Lightspeed is a CyberSainya partner.)</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">Investors just put $720M into a chip company that hasn&rsquo;t shipped a chip. What are they betting is the real bottleneck in AI? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">3 &nbsp; EMERGING TECH</td><td class="seccount">QUANTUM · ROADMAP</td></tr></table>
+  <div class="kicker">IBM&rsquo;s QUANTUM ROADMAP CROSSES THE 1,000-QUBIT LINE</div>
+  <h3 class="ihead">IBM&rsquo;s new Nighthawk processor and its plan to wire two of them together signal a modular path to larger quantum machines &mdash; a long-horizon bet worth watching, not budgeting for yet.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>IBM unveiled the <b>Nighthawk r3</b> quantum processor &mdash; designed to run <b>10,000 quantum operations</b> across <b>520 programmable qubits</b> (2,034 physical qubits) &mdash; and said it plans to connect <b>two r3 processors</b> into a single <b>1,040-qubit</b> system in 2027 using chip-to-chip couplers. The strategy is <b>modular</b>: scale by linking processors rather than building ever-larger monolithic chips. IBM also reported that customers including <b>E.ON</b> and <b>Algorithmiq</b> have run <b>34 billion</b> circuits on the current-generation hardware, with performance gains up to 19&times; on certain workloads. Important caveat: these are <b>physical</b> qubits, not error-corrected logical ones, so practical, fault-tolerant quantum computing remains years out.</p>
+<p><b>Our read.</b> For nearly every enterprise, quantum is still a <b>watch-and-learn</b> item, not a line in next year&rsquo;s budget &mdash; and anyone selling you &ldquo;quantum-ready&rdquo; products today is mostly selling you a story. But the trajectory is worth tracking for two concrete reasons. First, the <b>engineering</b> is advancing on a credible roadmap (more qubits, faster operations, modular scaling), which is the signal that matters more than any single lab milestone. Second, and more practically, the same progress is what makes <b>&ldquo;harvest now, decrypt later&rdquo;</b> a real planning concern: adversaries can capture encrypted data today and decrypt it once quantum machines mature, so anything you need secret for ten-plus years argues for beginning the migration to <b>post-quantum cryptography</b> (the NIST-standardized algorithms) on long-lived secrets now. You don&rsquo;t need a quantum computer to act; you need to know which of your data has a long enough shelf life to care.</p></div>
+  <div class="sources"><a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">IBM unveils Nighthawk r3, charts path beyond 1,000 qubits &mdash; The CODEW</a> &nbsp;·&nbsp; <a class="src" href="https://newsroom.ibm.com/" target="_blank" rel="noopener">IBM Newsroom &mdash; quantum roadmap and Nighthawk</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>IBM Nighthawk r3</b>: <b>10,000</b> quantum operations across <b>520</b> programmable qubits (<b>2,034</b> physical). Plan: link <b>two</b> r3 chips into a <b>1,040-qubit</b> system in <b>2027</b> via chip-to-chip couplers &mdash; a <b>modular</b> scaling bet. Customers <b>E.ON, Algorithmiq</b> ran <b>34B</b> circuits (up to 19&times; faster on some workloads). Caveat: <b>physical</b>, not error-corrected logical, qubits &mdash; fault tolerance is still years away.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>IBM</b> (modular superconducting), alongside quantum efforts at <b>Google, Microsoft</b> and others, is racing on engineering execution. The practical move for enterprises isn&rsquo;t buying quantum &mdash; it&rsquo;s starting <b>post-quantum cryptography</b> migration on long-lived secrets, so &ldquo;harvest now, decrypt later&rdquo; doesn&rsquo;t turn today&rsquo;s data into tomorrow&rsquo;s breach.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">IBM says it will wire two quantum processors into one 1,040-qubit machine. Is the race now about physics, or about engineering? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">4 &nbsp; ENTERPRISE SOFTWARE</td><td class="seccount">SERVICES · AGENTS</td></tr></table>
+  <div class="kicker">AI MOVES FROM THE PILOT DECK TO THE PAYROLL</div>
+  <h3 class="ihead">A consultancy putting 25,000 people behind one AI model &mdash; and a $300M raise for the plumbing that runs agents &mdash; mark the shift from &lsquo;can AI work?&rsquo; to &lsquo;who operates it in production?&rsquo;</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Two developments this week captured enterprise AI&rsquo;s move from experiment to operations. <b>Cognizant</b> stood up a <b>Claude Frontier Capability Group</b> &mdash; more than <b>25,000 professionals</b> dedicated to delivering and <i>operating</i> Anthropic&rsquo;s Claude for clients, with over <b>44,000</b> associates trained or certified &mdash; and cited outcomes like a 35% cut in shop-floor downtime at a pharmaceutical manufacturer. Separately, <b>LangChain</b> raised <b>$300 million</b> at a <b>$3 billion</b> valuation (led by CapitalG), building the open-source orchestration layer enterprises use to wire agents into real workflows. The common thread: the money and the headcount are flowing to the <b>unglamorous middle</b> &mdash; integration, operation, orchestration &mdash; not the models themselves.</p>
+<p><b>Our read.</b> The telling signal is that it takes <b>25,000 people</b> to deliver one model well. Read that two ways, both true: the technology is genuinely useful enough to justify that investment, <i>and</i> it is hard enough to run in production that a services army exists to do it. For leaders, the practical implications are concrete. First, <b>the bottleneck has moved</b> from model capability to <b>integration and operations</b> &mdash; your AI results will depend less on which model you pick and more on how well it&rsquo;s wired into your data and workflows, and who keeps it running. Second, <b>decide build-vs-buy deliberately</b>: orchestration layers like LangChain let you own and customize the connective tissue (and avoid single-vendor lock-in), while services firms let you rent expertise you don&rsquo;t have &mdash; both are reasonable, but drifting into either by accident is not. The era of the flashy pilot is ending; the era of <b>operating</b> AI, with all its unglamorous plumbing and governance, has begun. Budget for the running costs, not just the demo.</p></div>
+  <div class="sources"><a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">Cognizant and LangChain signal enterprise AI&rsquo;s shift to infrastructure &mdash; The CODEW</a> &nbsp;·&nbsp; <a class="src" href="https://blog.langchain.com/" target="_blank" rel="noopener">LangChain raises $300M at $3B valuation &mdash; LangChain Blog</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>Cognizant</b> &mdash; <b>Claude Frontier Capability Group</b>: <b>25,000+</b> professionals to deliver/operate Anthropic&rsquo;s Claude; <b>44,000+</b> associates trained or certified; cited a 35% downtime cut at a pharma manufacturer. <b>LangChain</b> &mdash; <b>$300M</b> raise at a <b>$3B</b> valuation (CapitalG-led) for open-source agent <b>orchestration</b>. Capital and headcount flowing to <b>integration and operations</b>, not models.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Anthropic</b> (model), <b>Cognizant</b> (services/operations) and <b>LangChain</b> (orchestration) sit at the layers that decide whether AI works in production; <b>Microsoft, Google Cloud, Databricks</b> anchor the data under them. The move: treat <b>integration and run-cost</b> as the real project, decide build-vs-buy on orchestration deliberately, and keep the connective tissue portable. (Anthropic is a CyberSainya partner.)</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">A consultancy just put 25,000 people behind delivering <i>one</i> AI model. Is that a sign the technology works &mdash; or that it&rsquo;s hard to run? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">5 &nbsp; NETWORK &amp; RESILIENCE</td><td class="seccount">OBSERVABILITY · CONTINUITY</td></tr></table>
+  <div class="kicker">THE OUTAGE PUT RESILIENCE BACK ON THE AGENDA</div>
+  <h3 class="ihead">A 24-hour global outage reframed a quiet networking question as a boardroom one: can you see, and survive, a failure that happens outside your own walls?</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>This week&rsquo;s Microsoft 365 outage (front page) did more than break email &mdash; it put <b>network and operational resilience</b> back on the executive agenda, and vendors moved to meet the moment. <b>Cisco</b> bundled its <b>ThousandEyes</b> internet- and cloud-visibility testing into access-point licenses at no extra cost and shipped management hooks for its networking platforms, pushing the idea that you should be able to <b>see</b> a degradation in a provider you don&rsquo;t control before your users do. <b>Spectrum Business</b> launched a managed service that blends fiber, broadband, 5G and satellite under a single uptime SLA, and <b>Cornelis Networks</b> announced a UALink-based scale-up fabric &mdash; all variations on one theme: when the failure is upstream, your leverage is <b>visibility and alternate paths</b>, not more of the same pipe.</p>
+<p><b>Our read.</b> The outage exposed an uncomfortable truth: much of what breaks your business now lives <b>outside your perimeter</b> &mdash; a cloud suite, a transit provider, a SaaS dependency &mdash; where your own redundancy buys you nothing. Two practical moves. First, <b>buy visibility before you need it</b>: independent monitoring of the providers and paths you depend on (the kind ThousandEyes and its rivals sell) turns &ldquo;is it us or them?&rdquo; from an hour of guessing into a dashboard, which is the difference between a measured response and a panicked one. Second, <b>design alternate paths for the few things that cannot go dark</b> &mdash; a second internet transit, an out-of-band comms channel, a fallback for payments or safety-critical systems &mdash; and <i>test</i> them, because an untested failover is just a hopeful diagram. Resilience isn&rsquo;t a product you buy once; it&rsquo;s a property of how you&rsquo;re built, and this week it stopped being optional.</p></div>
+  <div class="sources"><a class="src" href="https://www.prnewswire.com/news-releases/spectrum-business-launches-a-new-secure-networking-offering-302929471.html" target="_blank" rel="noopener">Spectrum Business launches a new secure networking offering &mdash; PR Newswire</a> &nbsp;·&nbsp; <a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">Microsoft 365 outage exposes cloud-dependency fragility &mdash; The CODEW</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-015-network.jpg" alt="A watchtower operator with a telescope spotting a distant storm over someone else's cloud, while redundant roads and cables branch around the obstacle and one path stays lit"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody">Post-outage, the <b>resilience</b> market moved: <b>Cisco</b> bundled <b>ThousandEyes</b> internet/cloud-visibility testing into access-point licenses (no extra cost) + added networking management hooks; <b>Spectrum Business</b> launched managed multi-path service (fiber + broadband + 5G + satellite, single uptime SLA); <b>Cornelis Networks</b> announced a <b>UALink</b> scale-up fabric. Common theme: when the failure is <b>upstream</b>, leverage = visibility + alternate paths.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Cisco</b> (ThousandEyes/networking), <b>HPE</b> (Aruba/Juniper) and <b>Fortinet</b> build visibility and resilient multi-path connectivity. The move: buy <b>independent monitoring</b> of the providers you depend on <i>before</i> the outage, and design + <b>test</b> alternate paths for the few workflows that truly cannot go dark. (Cisco is a CyberSainya partner.)</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">After a 24-hour outage, everyone wants &ldquo;resilience.&rdquo; Is that a product you buy, or a property of how you&rsquo;re built? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">6 &nbsp; IDENTITY &amp; ACCESS</td><td class="seccount">AGENT IDENTITY · GOVERNANCE</td></tr></table>
+  <div class="kicker">SECURING THE AGENTS THAT NOW CARRY YOUR KEYS</div>
+  <h3 class="ihead">IBM bought an identity-security firm and wired it into HashiCorp Vault to answer a question every enterprise is about to face: who &mdash; or what &mdash; is actually logged in?</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p><b>IBM acquired</b> identity-security company <b>AuthMind</b> and integrated it into <b>HashiCorp Vault</b> to tackle a fast-growing problem: securing <b>AI agents</b> that act autonomously with access to sensitive systems. AuthMind&rsquo;s <b>identity activity graph</b> maps the relationships and access paths between identities and resources, surfacing <b>shadow agents</b> and flagging anomalous behavior <i>after</i> credentials leave the vault &mdash; the blind spot traditional identity tools miss. IBM frames it as <b>&ldquo;agent runtime security&rdquo;</b> across five jobs: register, delegate, authorize, audit and revoke. The timing is the point: as enterprises deploy agents that act on behalf of users and other agents, authenticating <i>humans</i> at the door is no longer the whole job.</p>
+<p><b>Our read.</b> A decade of identity investment taught organizations to secure <b>human</b> logins &mdash; passwords, MFA, single sign-on. Autonomous agents break that model in a specific, dangerous way: they hold credentials, make their own decisions, call other systems and other agents, and keep acting long after the initial login &mdash; so the risk isn&rsquo;t just <i>getting in</i>, it&rsquo;s what a legitimate-but-misbehaving (or hijacked) agent does once inside. Three moves to get ahead of it. <b>Inventory your non-human identities</b> &mdash; service accounts, API keys and now agents almost always outnumber your employees, and most organizations can&rsquo;t list them. <b>Give agents short-lived, narrowly-scoped, revocable credentials</b>, not standing keys, so a compromised agent has a small blast radius and an off switch. And <b>log and monitor what agents do after authentication</b>, not just whether they authenticated &mdash; because with agents, the second factor you really need is <i>behavioral</i>. The identity perimeter just grew a population you didn&rsquo;t hire; govern it like one.</p></div>
+  <div class="sources"><a class="src" href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">IBM moves to secure AI agent identities with AuthMind &mdash; The CODEW</a> &nbsp;·&nbsp; <a class="src" href="https://newsroom.ibm.com/" target="_blank" rel="noopener">IBM Newsroom &mdash; AuthMind acquisition</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-015-identity.jpg" alt="A human silhouette handing a keyring to a small autonomous robot that walks confidently through a vault door wired with glowing identity threads that track where it goes"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>IBM acquires AuthMind</b> (identity security), integrates into <b>HashiCorp Vault</b> for <b>&ldquo;agent runtime security&rdquo;</b> &mdash; five functions: <b>register, delegate, authorize, audit, revoke</b>. AuthMind&rsquo;s <b>identity activity graph</b> maps access paths, surfaces <b>shadow agents</b>, detects anomalies <i>after</i> credentials leave the vault. IBM Ventures had backed AuthMind&rsquo;s 2023 seed round. Signals identity security for <b>non-human actors</b> becoming a budget priority.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>IBM/HashiCorp</b> (Vault), <b>Okta, Microsoft</b> (Entra) and <b>CyberArk</b> are racing to govern machine and agent identities. The move: <b>inventory non-human identities</b>, issue <b>short-lived, scoped, revocable</b> credentials to agents, and monitor agent <b>behavior after login</b> &mdash; not just authentication. (Okta is a CyberSainya partner.)</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">You spent a decade learning to secure human logins. Now an AI agent holds the credentials and acts on its own. Who &mdash; or what &mdash; is logging in? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">7 &nbsp; CYBERSECURITY</td><td class="seccount">ZERO-DAY · PATCH NOW</td></tr></table>
+  <div class="kicker">PATCH TONIGHT: AN OUTLOOK ZERO-DAY STEALS YOUR LOGINS</div>
+  <h3 class="ihead">A booby-trapped file can hand attackers your Windows authentication without you typing a password &mdash; one of three actively-exploited flaws that need patching this week.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>Microsoft confirmed attackers are exploiting an <b>Outlook zero-day</b> &mdash; <b>CVE-2026-124194</b>, patched <b>November 10</b> &mdash; that can expose <b>Windows authentication hashes</b> when a user merely opens a malicious file, handing attackers credentials they can relay or crack <i>without the victim typing a password</i>. It didn&rsquo;t arrive alone. Google patched <b>CVE-2026-125350</b>, a use-after-free in Chrome &mdash; reportedly the <b>eighth actively-exploited Chrome zero-day of 2026</b> &mdash; and researchers disclosed <b>NoisyTCP</b> (<b>CVE-2026-99288</b>), a Linux-kernel race condition that lets a remote, unauthenticated attacker <b>crash default-configured servers</b>. Three different stacks &mdash; email client, browser, server OS &mdash; all with exploitation in the wild in a single week.</p>
+<p><b>Our read.</b> The through-line is that the <b>most mundane software is the perimeter</b>: the inbox, the browser, the kernel every server runs. An Outlook flaw that steals your login just by rendering a file collapses the comforting idea that users have to &ldquo;fall for&rdquo; something &mdash; sometimes opening the message is enough. Three actions, in order. <b>Patch the Outlook and Chrome zero-days now</b>, not on the next maintenance window &mdash; &ldquo;actively exploited&rdquo; plus &ldquo;on CISA&rsquo;s KEV list&rdquo; is the definition of a short clock. <b>Block outbound NTLM / SMB to the internet</b> so a stolen hash can&rsquo;t phone home, the standard mitigation for this class of credential-theft bug. And <b>schedule the Linux kernel update</b> for NoisyTCP on internet-facing servers, since a remote crash is a denial-of-service anyone can trigger. None of this is exotic &mdash; it&rsquo;s patch hygiene on the three pieces of software everyone uses and nobody thinks about, which is exactly why attackers keep going there.</p></div>
+  <div class="sources"><a class="src" href="https://cybersecuritynews.com/outlook-0-day-vulnerability/" target="_blank" rel="noopener">Microsoft confirms hackers exploiting Outlook 0-day to steal Windows auth hashes &mdash; Cyber Security News</a> &nbsp;·&nbsp; <a class="src" href="https://cybersecurityhunter.com/daily-cybersecurity-news-roundup-november-12-2026/" target="_blank" rel="noopener">Daily cybersecurity roundup: Chrome zero-day CVE-2026-125350 &mdash; Cybersecurity Hunter</a></div>
+  <div class="furniture withimg"><div class="fimg"><img class="furnimg" src="issue-015-cybersecurity.jpg" alt="An innocent-looking email envelope opening to reveal a hook lifting a glowing key-shaped credential out of a login badge, a browser and server rack cracked behind under a clock reading patch now"></div><div class="fboxes"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody">Three actively-exploited flaws this week. <b>Outlook CVE-2026-124194</b> (patched <b>Nov 10</b>): opening a malicious file leaks <b>Windows auth hashes</b> &mdash; credential theft with no password typed. <b>Chrome CVE-2026-125350</b>: use-after-free, reportedly the <b>8th</b> exploited Chrome zero-day of 2026. <b>NoisyTCP / Linux CVE-2026-99288</b>: remote, unauthenticated <b>server crash</b> on default configs. Email client, browser, server OS &mdash; all under attack at once.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Microsoft, Google</b> (Chrome) and the <b>Linux</b> vendors issued the fixes; <b>CrowdStrike, Microsoft Defender</b> and <b>Tenable</b> help find and prioritize exposure. The move: <b>patch the Outlook + Chrome zero-days now</b>, <b>block outbound NTLM/SMB</b> to the internet, and schedule the <b>kernel update</b> on internet-facing servers. (CrowdStrike and Tenable are CyberSainya partners.)</div></div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">A booby-trapped file steals your Windows login without you typing a password. If opening an email can do that, what is your real perimeter? <i>(answer at the foot)</i></div></div>
+</section><section class="layer">
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">8 &nbsp; MARKETS</td><td class="seccount">EARNINGS · CONCENTRATION</td></tr></table>
+  <div class="kicker">THE ONE NUMBER THE WHOLE MARKET IS WAITING ON</div>
+  <h3 class="ihead">Nvidia reports tonight, and its data-center figure has become a referendum on the entire AI trade &mdash; a concentration that is itself the risk worth managing.</h3>
+  <div class="hair"></div>
+  <div class="prose2"><p>After the US close on <b>November 17</b>, <b>Nvidia</b> reports fiscal-Q3 results, with consensus near <b>$109 billion</b> in quarterly revenue and all eyes on the <b>data-center</b> line (last quarter: <b>$89 billion</b>, up 117% year-over-year). The report lands straight into this month&rsquo;s anxieties &mdash; AI-valuation worries, data-center debt, and the <b>custom-silicon</b> pressure from Google&rsquo;s TPUs and Amazon&rsquo;s chips (see Silicon). The striking part isn&rsquo;t the number itself; it&rsquo;s that a <b>single company&rsquo;s earnings</b> have become the market&rsquo;s proxy for whether the entire AI build-out is real. When one data point carries that much weight, the weight itself is the signal.</p>
+<p><b>Our read.</b> Most leaders don&rsquo;t trade Nvidia stock, so the earnings line matters less than what the <b>reaction</b> teaches about risk. The lesson is <b>concentration</b>: an enormous amount of the market&rsquo;s confidence &mdash; and a lot of your vendors&rsquo; roadmaps and pricing &mdash; now rests on one supplier&rsquo;s results and one category&rsquo;s spending continuing. That is exactly the kind of single-point dependency this issue keeps circling, from the cloud outage that took down four services at once to the AI capacity you rent from a handful of providers. You can&rsquo;t diversify Nvidia, but you can refuse to inherit its leverage: keep your AI commitments <b>staged against milestones</b> rather than signed as long lock-ins at today&rsquo;s prices; keep models and workloads <b>portable</b> so a repricing or a supply wobble in any one vendor is an inconvenience, not an outage; and judge your own AI spend on a <b>measurable return</b>, not on the assumption that because everyone is spending, the spending must be safe. Watch the number tonight &mdash; but manage the concentration it represents every week.</p></div>
+  <div class="sources"><a class="src" href="https://www.nasdaq.com/articles/will-data-center-business-help-nvidia-beat-q3-sales-target-54b" target="_blank" rel="noopener">Will data center business help Nvidia beat Q3 sales target of $54B? &mdash; Nasdaq</a> &nbsp;·&nbsp; <a class="src" href="https://www.cmelitegroup.com/knowledge-hub/nvidia-earnings-date-fiscal-q3-2027-report-time-guidance-and-expected-move/" target="_blank" rel="noopener">Nvidia Q3 FY2027 earnings date confirmed for Nov 17 &mdash; CM Elite Group</a></div>
+  <div class="furniture noimg"><div class="numbox"><div class="boxlabel">BY THE NUMBERS</div><div class="boxbody"><b>Nvidia</b> reports fiscal-Q3 after the close <b>Nov 17</b>: consensus ~<b>$109B</b> revenue; focus on the <b>data-center</b> line (prior quarter <b>$89B</b>, +117% YoY). Lands amid AI-valuation, data-center-debt and <b>custom-silicon</b> (Google TPU / AWS) pressure. The signal isn&rsquo;t the figure &mdash; it&rsquo;s that <b>one company&rsquo;s earnings</b> now stand in for the whole AI trade. That concentration is the risk.</div></div><div class="vendbox"><div class="boxlabel vend">VENDOR MAP</div><div class="boxbody"><b>Nvidia</b> anchors AI compute; <b>Google Cloud, AWS, Microsoft</b> and challengers are building alternatives. The move for buyers isn&rsquo;t trading the stock &mdash; it&rsquo;s refusing the <b>concentration</b>: stage AI commitments against milestones, keep workloads portable, and tie your own AI spend to a measurable return rather than the crowd&rsquo;s momentum.</div></div></div>
+  <div class="teaser railfit"><div class="tlabel">SIGNAL BRAIN TEASER</div><div class="tbody">One company&rsquo;s earnings tonight can move the entire market&rsquo;s view of AI. What does it mean when so much rides on a single number? <i>(answer at the foot)</i></div></div>
+</section>
+  <div class="secrule"></div>
+<table class="sechead"><tr><td class="secname">THE THROUGH-LINE</td><td class="seccount">ACROSS ALL EIGHT LAYERS</td></tr></table>
+<div class="capstone"><b>This week&rsquo;s theme is concentration &mdash; and the fragility it hides.</b> A single cloud suite&rsquo;s bad day took down email, meetings, security tooling and AI assistants across 74 countries at once (front page), and the market spent the week waiting on one company&rsquo;s earnings to validate the entire AI trade (Markets). In between, the industry kept building the foundations beneath the models: custom silicon maturing into product lines (Silicon), architectural bets on memory over raw compute (Semiconductors), a modular road toward bigger quantum machines (Emerging Tech), and the 25,000-person reality of actually <i>operating</i> AI in production (Enterprise Software). The security and resilience stories named the cost of the shortcuts: visibility and alternate paths for failures outside your walls (Network), identity governance for the agents now holding your keys (Identity), and three mundane zero-days &mdash; inbox, browser, kernel &mdash; under attack at once (Cybersecurity). The message for leaders is consistent: efficiency comes from consolidation, but resilience comes from <b>refusing to let any single point &mdash; cloud, vendor, chip or agent &mdash; carry more of your business than you could afford to lose in a day.</b></div>
+  <div class="secrule"></div>
+<table class="sechead"><tr><td class="secname"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a24e1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7.5" cy="7.5" r="1.3" fill="#a24e1f"/></svg>IN MARKET</td><td class="seccount">NEW PRODUCTS THIS WEEK</td></tr></table>
+<div class="featgrid3">
+  <div class="fcard"><span class="ftag ent">ENTERPRISE &middot; PARTNER</span><div class="fname">IBM Vault + AuthMind agent identity</div><div class="fwhy">HashiCorp Vault gains AuthMind&rsquo;s identity activity graph for &ldquo;agent runtime security&rdquo; &mdash; discovering shadow agents and watching what credentials do after they leave the vault. <b>Why it matters:</b> your non-human identities already outnumber your staff; this is how you see them.</div><div class="fsrc"><a href="https://newsroom.ibm.com/" target="_blank" rel="noopener">IBM</a></div></div>
+  <div class="fcard"><span class="ftag ent">ENTERPRISE &middot; PARTNER</span><div class="fname">Cisco ThousandEyes, now in the AP license</div><div class="fwhy">Cisco bundled its internet- and cloud-visibility testing into access-point licenses at no extra cost. <b>Why it matters:</b> after a 24-hour outage, seeing a provider degrade before your users do is the difference between a measured response and a scramble.</div><div class="fsrc"><a href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">The CODEW</a></div></div>
+  <div class="fcard"><span class="ftag ent">ENTERPRISE &middot; PARTNER</span><div class="fname">Google TPU 8tX &amp; 8i Max</div><div class="fwhy">Two specialized Ironwood variants &mdash; 8tX for government/regulated workloads, 8i Max for compute-heavy jobs like coding and drug discovery. <b>Why it matters:</b> real, segmented alternatives to Nvidia mean pricing leverage &mdash; if you keep workloads portable.</div><div class="fsrc"><a href="https://www.thecodew.com/2026/11/weekly-tech-roundup-november-second-week.html" target="_blank" rel="noopener">The CODEW</a></div></div>
+  <div class="fcard"><span class="ftag ent">ENTERPRISE</span><div class="fname">Spectrum Business Managed Secure Networking</div><div class="fwhy">A managed service blending fiber, broadband, 5G and satellite under a single 100% uptime SLA. <b>Why it matters:</b> alternate paths for the connectivity your business can&rsquo;t afford to lose &mdash; bought, not bolted on after the outage.</div><div class="fsrc"><a href="https://www.prnewswire.com/news-releases/spectrum-business-launches-a-new-secure-networking-offering-302929471.html" target="_blank" rel="noopener">PR Newswire</a></div></div>
+  <div class="fcard"><span class="ftag ent">ENTERPRISE</span><div class="fname">LangChain (Series C)</div><div class="fwhy">A $300M raise funds the open-source orchestration layer enterprises use to wire AI agents into real workflows. <b>Why it matters:</b> the connective tissue between models and your business &mdash; the part you can own instead of renting from one model vendor.</div><div class="fsrc"><a href="https://blog.langchain.com/" target="_blank" rel="noopener">LangChain</a></div></div>
+</div>
+  <div class="secrule"></div>
+<table class="sechead"><tr><td class="secname"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>ON THE RADAR</td><td class="seccount">EVENTS &amp; CONFERENCES</td></tr></table>
+<div class="evgrid">
+  <div class="evcard"><div class="evdate">NOV 17</div><div class="evname">Nvidia Q3 earnings</div><div class="evmeta">After the US close &mdash; the data-center number this issue&rsquo;s Markets story calls a referendum on the whole AI trade.</div></div>
+  <div class="evcard"><div class="evdate">NOV 17&ndash;20</div><div class="evname">Microsoft Ignite</div><div class="evmeta">Microsoft&rsquo;s enterprise AI, Copilot and security roadmap &mdash; with resilience questions sharper after this week&rsquo;s outage.</div></div>
+  <div class="evcard"><div class="evdate">NOV 17&ndash;19</div><div class="evname">Workday Rising EMEA</div><div class="evmeta">Barcelona &mdash; enterprise HR and finance platform direction, and where agents fit in the back office.</div></div>
+  <div class="evcard"><div class="evdate">THIS WEEK</div><div class="evname">Anthropic IPO developments</div><div class="evmeta">Following a filed pricing range &mdash; a bellwether for how public markets value frontier AI companies.</div></div>
+  <div class="evcard"><div class="evdate">NOV 30&ndash;DEC 4</div><div class="evname">AWS re:Invent</div><div class="evmeta">Las Vegas, NV &mdash; the year&rsquo;s biggest cloud launches; watch for Trainium/Inferentia and resilience messaging.</div></div>
+</div>
+  <div class="secrule"></div>
+<table class="sechead"><tr><td class="secname">PARTNER DESK</td><td class="seccount">PARTNER SPOTLIGHT &middot; ROTATES EACH ISSUE</td></tr></table>
+<div class="pdesk">
+  <div class="pdname">CrowdStrike</div>
+  <div class="pdrole">Cloud-native security platform &middot; endpoint, identity &amp; cloud</div>
+  <div class="pdbody">CrowdStrike runs one of the most widely deployed cloud-native security platforms, <b>Falcon</b> &mdash; a single lightweight agent spanning endpoint detection and response (EDR/XDR), threat intelligence, cloud-workload protection, and increasingly <b>identity threat protection and AI-agent security</b> (the Falcon Guardian line featured in recent issues). The pitch is consolidation: one data platform and one console instead of a drawer of point tools, with detections informed by trillions of security signals a week. For leaders, the draw is fewer agents and faster machine-speed response; the caution, as with any platform, is concentration &mdash; make sure it complements, not quietly replaces, your identity provider and SIEM.</div>
+  <div class="pdlayers"><b>Where it sits in the eight layers:</b> strongest at <b>Identity &amp; Access</b> and <b>Cybersecurity</b>, with real reach into <b>Cloud</b> and <b>Infrastructure</b> (workload protection). Pair it with your identity and logging stack rather than treating it as all of them.</div>
+  <div class="pdnote">CrowdStrike is one of ~20 CyberSainya technology partners. We stay <b>vendor-neutral</b> &mdash; we recommend it where it fits your environment and your risk, never by quota. <a href="https://www.cybersainya.com/contactus" target="_blank" rel="noopener">Talk to us about where it fits your stack &rarr;</a></div>
+</div>
+  <div class="promo">
+  <div class="promohead">You can run every service on one tidy cloud and still watch your whole business go dark for a day &mdash; because the weakest link has never been the technology. It&rsquo;s the plan you didn&rsquo;t test.</div>
+  <div class="promobody">That&rsquo;s what real preparation fixes. <b>CyberSainya designs and delivers custom cyber-awareness and resilience workshops</b> for leadership, teams and boards &mdash; in any sector, at any stage of your transformation &mdash; live or virtual, scoped to your people, your dependencies and the failures you&rsquo;d actually face. This week an outage hit 74 countries and a single file could steal a login; the judgment and the fallback plan your people bring are still the deciding controls.</div>
+  <a class="promocta" href="mailto:info@cybersainya.com?subject=Cyber-awareness%20workshop%20enquiry%20%E2%80%94%20The%20Signal">Email us at info@cybersainya.com for custom workshop plans &amp; current rates &rarr;</a>
+  <div class="promosrc">Workshops for leadership, teams and boards &mdash; any sector, live or virtual. &nbsp;Reach us at <a href="https://www.cybersainya.com/contactus" target="_blank" rel="noopener">cybersainya.com/contactus</a></div>
+</div>
+  <div class="teaseranswer">Brain teaser answers &mdash; <b>One suite:</b> four failure modes, one outage &mdash; diversify the critical few. <b>TPU line:</b> demand so deep it&rsquo;s worth segmenting. <b>$720M:</b> memory bandwidth, not raw compute. <b>1,040 qubits:</b> engineering &mdash; modular scaling. <b>25,000 people:</b> both &mdash; it works, and it&rsquo;s hard to operate. <b>Resilience:</b> a property of your architecture, not a SKU. <b>Agent keys:</b> a non-human identity &mdash; govern it like one. <b>Booby-trapped file:</b> the inbox &mdash; patch now. <b>One number:</b> concentration risk &mdash; don&rsquo;t inherit the leverage.</div>
+  <div class="subbar"><div class="subtxt"><b>Subscribe to The Signal.</b> The eight-layer executive briefing, free in your inbox every week. Forward it to a colleague who should be reading it.</div><a class="subcta" href="https://www.cybersainya.com/contactus" target="_blank" rel="noopener">Subscribe free &rarr;</a></div>
+
+  <div class="secrule"></div>
+  <table class="sechead"><tr><td class="secname">ABOUT CYBERSAINYA</td><td class="seccount">DIGITAL TRANSFORMATION PARTNER</td></tr></table>
+  <p class="aboutlede"><b>CyberSainya is a digital transformation partner.</b> We help organizations turn IT, security, and AI from sources of risk into engines of growth &mdash; complexity made simple. That means clear strategy, the right technology, and a partner who stays in the room long after the decision is made: advisory and consulting, security and IT assessments, executive workshops, and hands-on execution. Through our AI products division, <b>CernoGlobus</b>, we build practical, security-by-design AI that puts enterprise-grade protection behind everyday automation.</p>
+  <div class="aboutcols">
+    <div class="aboutcol"><div class="abouth">Advisory &amp; assessments</div><div class="aboutt">Benchmark your control plane across all eight layers, then a clear plan to close the gaps &mdash; not a 90-page PDF nobody reads. <a href="https://assess.cybersainya.com" target="_blank" rel="noopener">Take the free assessment &rarr;</a></div></div>
+    <div class="aboutcol"><div class="abouth">CernoGlobus &middot; AI division</div><div class="aboutt">Security-by-design AI coworkers that automate the busywork without opening one more door.</div></div>
+  </div>
+  <div class="vendorneutral"><b>Vendor-neutral by design.</b> CyberSainya partners with Anthropic, Adobe, AWS, Check Point, Cisco, CrowdStrike, Databricks, Dell, Fortinet, Google Cloud, HPE, IBM, Lenovo, Lightspeed, Microsoft, Okta, Palo Alto Networks, Red Hat, Tenable, and Zscaler. So the tools we recommend fit your environment and your risk, never a quota.</div>
+  <div class="footer">
+    <div><b>The Signal</b> &mdash; a weekly Executive Briefing from <b>CyberSainya</b>. Read every issue at <a href="https://cybersainya.com/signal">cybersainya.com/signal</a> · Subscribe free at <a href="https://www.cybersainya.com/contactus">cybersainya.com/contactus</a></div>
+    <div>cybersainya.com</div>
+  </div>
+</div>
+</body></html>
